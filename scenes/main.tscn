@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cdyw6x5dwgfk"]
+
+[ext_resource type="PackedScene" uid="uid://d4jrm8w43jxhb" path="res://scenes/hud.tscn" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://ddp100v4wj88o" path="res://scenes/shooter_man.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://ujbi2opuojbf" path="res://scenes/triangle_gloink.tscn" id="3_tipki"]
+[ext_resource type="PackedScene" uid="uid://crmgy638u6oa0" path="res://scenes/square_gloink.tscn" id="4_85g3d"]
+[ext_resource type="PackedScene" uid="uid://d3dflvqu5pwd2" path="res://scenes/pentagon_gloink.tscn" id="5_choun"]
+[ext_resource type="PackedScene" uid="uid://cpp5liyds3qrk" path="res://scenes/hexagon_gloink.tscn" id="6_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://cojsfwxn7dapl" path="res://scenes/heptagon_gloink.tscn" id="7_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://decaraqqjs4tt" path="res://scenes/octagon_gloink.tscn" id="7_tipki"]
+[ext_resource type="PackedScene" uid="uid://chqt4iak3ydj5" path="res://scenes/wave_title.tscn" id="9_85g3d"]
+
+[node name="Main" type="Node2D" unique_id=78608440]
+
+[node name="HUD" parent="." unique_id=153174832 instance=ExtResource("1_0wfyh")]
+layer = -1
+
+[node name="Gloinks" type="Node" parent="." unique_id=1597259995]
+
+[node name="TriangleGloink" parent="Gloinks" unique_id=585691007 instance=ExtResource("3_tipki")]
+position = Vector2(36, 494)
+
+[node name="SquareGloink" parent="Gloinks" unique_id=1096720714 instance=ExtResource("4_85g3d")]
+position = Vector2(26, 400)
+
+[node name="PentagonGloink" parent="Gloinks" unique_id=1851311926 groups=["gloink"] instance=ExtResource("5_choun")]
+position = Vector2(33, 291)
+
+[node name="HexagonGloink" parent="Gloinks" unique_id=183476767 groups=["gloink"] instance=ExtResource("6_ya4ey")]
+position = Vector2(186, -48)
+
+[node name="HeptagonGloink" parent="Gloinks" unique_id=978445233 groups=["gloink"] instance=ExtResource("7_eb6dy")]
+position = Vector2(33, 165)
+
+[node name="OctagonGloink" parent="Gloinks" unique_id=1108322772 groups=["gloink"] instance=ExtResource("7_tipki")]
+position = Vector2(34, 43)
+
+[node name="Projectiles" type="Node" parent="." unique_id=1808145432]
+unique_name_in_owner = true
+
+[node name="ShooterMan" parent="." unique_id=641757937 instance=ExtResource("1_o5qli")]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(860, 259)
+
+[node name="WaveTitle" parent="." unique_id=1655160409 instance=ExtResource("9_85g3d")]
+offset_left = 480.0
+offset_right = 480.0

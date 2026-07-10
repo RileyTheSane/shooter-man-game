@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://crmgy638u6oa0"]
+
+[ext_resource type="Texture2D" uid="uid://8t5r8i4hc8lq" path="res://assets/ShooterManArt.png" id="1_5khqi"]
+[ext_resource type="Script" uid="uid://le4ersp2ijca" path="res://scripts/square_gloink.gd" id="1_sviqk"]
+[ext_resource type="PackedScene" uid="uid://dswxx7a3ti75f" path="res://scenes/simple_health_bar.tscn" id="3_1rweo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sviqk"]
+atlas = ExtResource("1_5khqi")
+region = Rect2(135, 49, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rweo"]
+atlas = ExtResource("1_5khqi")
+region = Rect2(160, 49, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26g3a"]
+atlas = ExtResource("1_5khqi")
+region = Rect2(185, 49, 25, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rx2x0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sviqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1rweo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26g3a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rx535"]
+size = Vector2(21, 19)
+
+[sub_resource type="Animation" id="Animation_1rweo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6.2831855]
+}
+
+[sub_resource type="Animation" id="Animation_26g3a"]
+resource_name = "Roll"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 0.39229217),
+"update": 0,
+"values": [0.0, 6.2831855]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rx2x0"]
+_data = {
+&"RESET": SubResource("Animation_1rweo"),
+&"Roll": SubResource("Animation_26g3a")
+}
+
+[node name="SquareGloink" type="CharacterBody2D" unique_id=1096720714 groups=["gloink"]]
+rotation = 6.2831855
+script = ExtResource("1_sviqk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1952275053]
+sprite_frames = SubResource("SpriteFrames_rx2x0")
+autoplay = "default"
+frame_progress = 0.60645
+offset = Vector2(0, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=583072783]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_rx535")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1606904133]
+libraries/ = SubResource("AnimationLibrary_rx2x0")
+
+[node name="RollTimer" type="Timer" parent="." unique_id=716708108]
+wait_time = 4.0
+
+[node name="RollStop" type="Timer" parent="." unique_id=694678614]
+wait_time = 0.4
+one_shot = true
+
+[node name="RandomStartOffset" type="Timer" parent="." unique_id=241612024]
+one_shot = true
+
+[node name="SimpleHealthBar" parent="." unique_id=736117579 instance=ExtResource("3_1rweo")]
+offset_top = -17.0
+offset_bottom = -17.0
+
+[connection signal="timeout" from="RollTimer" to="." method="_on_roll_timer_timeout"]
+[connection signal="timeout" from="RollStop" to="." method="_on_roll_stop_timeout"]
+[connection signal="timeout" from="RandomStartOffset" to="." method="_on_random_start_offset_timeout"]

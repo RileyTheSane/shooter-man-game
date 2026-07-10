@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://d3dflvqu5pwd2"]
+
+[ext_resource type="Texture2D" uid="uid://8t5r8i4hc8lq" path="res://assets/ShooterManArt.png" id="1_856ga"]
+[ext_resource type="Script" uid="uid://dijtjfgg358sg" path="res://scripts/pentagon_gloink.gd" id="1_ybx0y"]
+[ext_resource type="PackedScene" uid="uid://dswxx7a3ti75f" path="res://scenes/simple_health_bar.tscn" id="3_4dma0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybx0y"]
+atlas = ExtResource("1_856ga")
+region = Rect2(135, 74, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dma0"]
+atlas = ExtResource("1_856ga")
+region = Rect2(160, 74, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ms4kt"]
+atlas = ExtResource("1_856ga")
+region = Rect2(185, 74, 25, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_20huk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybx0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4dma0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ms4kt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="PentagonGloink" type="CharacterBody2D" unique_id=1851311926]
+script = ExtResource("1_ybx0y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=796228901]
+sprite_frames = SubResource("SpriteFrames_20huk")
+frame = 1
+frame_progress = 0.16539225
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=357391936]
+polygon = PackedVector2Array(0, -10, 11, 1, 5, 11, -5, 11, -11, 1)
+
+[node name="ShootTimer" type="Timer" parent="." unique_id=684479611]
+
+[node name="RandomStartOffset" type="Timer" parent="." unique_id=434945253]
+one_shot = true
+
+[node name="SimpleHealthBar" parent="." unique_id=736117579 instance=ExtResource("3_4dma0")]
+offset_top = -16.0
+offset_bottom = -16.0
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
+[connection signal="timeout" from="RandomStartOffset" to="." method="_on_start_offset_timer_timeout"]

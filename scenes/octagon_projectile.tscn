@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dw78adrgff55q"]
+
+[ext_resource type="Script" uid="uid://c6lpuh3ti18ki" path="res://scripts/octagon_projectile.gd" id="1_772rn"]
+[ext_resource type="Texture2D" uid="uid://qvjf77den8vj" path="res://assets/ShooterManArt.png" id="2_rqjpy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqjpy"]
+atlas = ExtResource("2_rqjpy")
+region = Rect2(160, 175, 7, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbkrh"]
+atlas = ExtResource("2_rqjpy")
+region = Rect2(168, 175, 7, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1uo48"]
+atlas = ExtResource("2_rqjpy")
+region = Rect2(176, 175, 7, 7)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_08yie"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqjpy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbkrh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1uo48")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qptt0"]
+size = Vector2(6, 6)
+
+[node name="PentagonProjectile" type="CharacterBody2D" unique_id=1350631881 groups=["gloink"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_772rn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1658925297]
+sprite_frames = SubResource("SpriteFrames_08yie")
+autoplay = "default"
+frame_progress = 0.20923486
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1902142133]
+shape = SubResource("RectangleShape2D_qptt0")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=528465241]
+rect = Rect2(-1, -1, 2, 2)
+
+[node name="Decay" type="Timer" parent="." unique_id=726339582]
+
+[connection signal="timeout" from="Decay" to="." method="_on_decay_timeout"]

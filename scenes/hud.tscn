@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://d4jrm8w43jxhb"]
+
+[node name="HUD" type="CanvasLayer" unique_id=153174832]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1692584798]
+offset_right = 960.0
+offset_bottom = 540.0

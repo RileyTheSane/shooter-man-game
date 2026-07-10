@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dswxx7a3ti75f"]
+
+[ext_resource type="Script" uid="uid://bau4gacwxhtb8" path="res://scripts/simple_health_bar.gd" id="1_rkbs6"]
+
+[node name="SimpleHealthBar" type="Control" unique_id=736117579]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rkbs6")
+
+[node name="Bar" type="ColorRect" parent="." unique_id=64518492]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -12.0
+offset_top = -1.0
+offset_right = 13.0
+offset_bottom = 2.0
+color = Color(0, 1, 0, 1)

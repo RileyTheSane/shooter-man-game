@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://cpp5liyds3qrk"]
+
+[ext_resource type="Script" uid="uid://dllq00denq54i" path="res://scripts/hexagon_gloink.gd" id="1_lxxjh"]
+[ext_resource type="Texture2D" uid="uid://8t5r8i4hc8lq" path="res://assets/ShooterManArt.png" id="1_of67m"]
+[ext_resource type="PackedScene" uid="uid://dswxx7a3ti75f" path="res://scenes/simple_health_bar.tscn" id="3_tv53m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxxjh"]
+atlas = ExtResource("1_of67m")
+region = Rect2(135, 99, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tv53m"]
+atlas = ExtResource("1_of67m")
+region = Rect2(185, 99, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73ggv"]
+atlas = ExtResource("1_of67m")
+region = Rect2(160, 99, 25, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t0jtx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxxjh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tv53m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73ggv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="HexagonGloink" type="CharacterBody2D" unique_id=183476767]
+script = ExtResource("1_lxxjh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1813580026]
+sprite_frames = SubResource("SpriteFrames_t0jtx")
+autoplay = "default"
+frame_progress = 0.751214
+offset = Vector2(0, -1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1216551903]
+polygon = PackedVector2Array(-5, -10, 5, -10, 11, -1, 5, 9, -5, 9, -11, 0)
+
+[node name="StartOffset" type="Timer" parent="." unique_id=57832718]
+one_shot = true
+
+[node name="MaxLifetime" type="Timer" parent="." unique_id=417807135]
+wait_time = 15.0
+one_shot = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1523792055]
+
+[node name="SimpleHealthBar" parent="." unique_id=736117579 instance=ExtResource("3_tv53m")]
+offset_top = -16.0
+offset_bottom = -16.0
+
+[connection signal="timeout" from="StartOffset" to="." method="_on_start_offset_timeout"]
+[connection signal="timeout" from="MaxLifetime" to="." method="_on_max_lifetime_timeout"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

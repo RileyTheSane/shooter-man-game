@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://cojsfwxn7dapl"]
+
+[ext_resource type="Script" uid="uid://uxs7h840gud2" path="res://scripts/heptagon_gloink.gd" id="1_0urw8"]
+[ext_resource type="Texture2D" uid="uid://8t5r8i4hc8lq" path="res://assets/ShooterManArt.png" id="1_i3rqa"]
+[ext_resource type="PackedScene" uid="uid://dswxx7a3ti75f" path="res://scenes/simple_health_bar.tscn" id="3_y410e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0urw8"]
+atlas = ExtResource("1_i3rqa")
+region = Rect2(135, 124, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y410e"]
+atlas = ExtResource("1_i3rqa")
+region = Rect2(160, 124, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npr0p"]
+atlas = ExtResource("1_i3rqa")
+region = Rect2(185, 124, 25, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gooko"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0urw8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y410e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npr0p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="Animation" id="Animation_y410e"]
+resource_name = "Dig"
+length = 1.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mask/AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(13, 13), Vector2(13, 16.22), Vector2(13, 20.01), Vector2(13, 22.37), Vector2(13, 26.76), Vector2(13, 33.48), Vector2(13, 39.22)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mask/AnimatedSprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.18325958, -0.2268928, 0.33161256, -0.28797933, 0.2617994, -0.28797933]
+}
+
+[sub_resource type="Animation" id="Animation_npr0p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mask/AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(13, 13)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mask/AnimatedSprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gooko"]
+_data = {
+&"Dig": SubResource("Animation_y410e"),
+&"RESET": SubResource("Animation_npr0p")
+}
+
+[node name="HeptagonGloink" type="CharacterBody2D" unique_id=978445233]
+script = ExtResource("1_0urw8")
+
+[node name="Mask" type="ColorRect" parent="." unique_id=1965640332]
+clip_contents = true
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+color = Color(1, 1, 1, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Mask" unique_id=1803293276]
+position = Vector2(13, 13)
+sprite_frames = SubResource("SpriteFrames_gooko")
+autoplay = "default"
+frame_progress = 0.6341338
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=949046058]
+libraries/ = SubResource("AnimationLibrary_gooko")
+
+[node name="StartDelay" type="Timer" parent="." unique_id=862663092]
+wait_time = 10.0
+one_shot = true
+
+[node name="AttackStartDelay" type="Timer" parent="." unique_id=2010787062]
+wait_time = 10.0
+one_shot = true
+
+[node name="LaunchAnimPause" type="Timer" parent="." unique_id=1699855956]
+wait_time = 1.5
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1534236499]
+visible = false
+polygon = PackedVector2Array(-11, -4, 0, -11, 10, -4, 11, 4, 5, 11, -6, 11, -11, 3)
+
+[node name="MaxFlyTime" type="Timer" parent="." unique_id=850955476]
+wait_time = 3.0
+
+[node name="SimpleHealthBar" parent="." unique_id=736117579 instance=ExtResource("3_y410e")]
+offset_top = -17.0
+offset_bottom = -17.0
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="StartDelay" to="." method="_on_start_delay_timeout"]
+[connection signal="timeout" from="AttackStartDelay" to="." method="_on_attack_start_delay_timeout"]
+[connection signal="timeout" from="LaunchAnimPause" to="." method="_on_launch_anim_pause_timeout"]
+[connection signal="timeout" from="MaxFlyTime" to="." method="_on_max_fly_time_timeout"]

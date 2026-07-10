@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://ujbi2opuojbf"]
+
+[ext_resource type="Texture2D" uid="uid://8t5r8i4hc8lq" path="res://assets/ShooterManArt.png" id="1_j0xo1"]
+[ext_resource type="Script" uid="uid://i112gw2dcj1b" path="res://scripts/triangle_gloink.gd" id="1_smsr0"]
+[ext_resource type="PackedScene" uid="uid://dswxx7a3ti75f" path="res://scenes/simple_health_bar.tscn" id="3_die1l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0xo1"]
+atlas = ExtResource("1_j0xo1")
+region = Rect2(135, 24, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smsr0"]
+atlas = ExtResource("1_j0xo1")
+region = Rect2(160, 24, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_die1l"]
+atlas = ExtResource("1_j0xo1")
+region = Rect2(185, 24, 25, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_huxk3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0xo1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smsr0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_die1l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="TriangleGloink" type="CharacterBody2D" unique_id=585691007 groups=["gloink"]]
+script = ExtResource("1_smsr0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1118666898]
+position = Vector2(0, -2)
+sprite_frames = SubResource("SpriteFrames_huxk3")
+autoplay = "default"
+frame_progress = 0.35128745
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1887081778]
+polygon = PackedVector2Array(0, -11, 11, 8, -11, 8)
+
+[node name="SimpleHealthBar" parent="." unique_id=736117579 instance=ExtResource("3_die1l")]
+offset_top = -18.0
+offset_bottom = -18.0

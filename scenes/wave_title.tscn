@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://chqt4iak3ydj5"]
+
+[ext_resource type="FontFile" uid="uid://bb4avnk27rmot" path="res://assets/PixelOperator8.ttf" id="1_exonh"]
+[ext_resource type="Script" uid="uid://bew648ot0bpbv" path="res://scripts/wave_title.gd" id="1_nnsfv"]
+
+[sub_resource type="Animation" id="Animation_conbe"]
+resource_name = "Hide"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:theme_override_font_sizes/font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(87, -0.24997719, -5.511143, 0.033333335, 0.73488617, 31.044865, -0.26666668, 31.888138, 0, 0),
+"times": PackedFloat32Array(0, 0.33333334)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(33.061, -0.25, 0, 0.25, 0, -121, -0.06817087, 30.065, 0, 0),
+"times": PackedFloat32Array(0, 0.4090252)
+}
+
+[sub_resource type="Animation" id="Animation_nnsfv"]
+resource_name = "Main"
+length = 1.1333333
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:theme_override_font_sizes/font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 2),
+"points": PackedFloat32Array(32, -0.25, 0, 0.25, 0, 43.44581, -0.06517676, -2.4585743, 0.099999964, 7.860935, 87.734886, -0.20000005, -31.094475, 0, 0),
+"times": PackedFloat32Array(0, 0.56666666, 1.1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 2),
+"points": PackedFloat32Array(-121, -0.25, 0, 0.033333335, -2.0265808, 47.208607, -0.13333333, -94.31804, 0, 0, 33.0609, -0.33333337, 172.13042, 0, 0),
+"times": PackedFloat32Array(0, 0.56666666, 1.1)
+}
+
+[sub_resource type="Animation" id="Animation_wlfmm"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:theme_override_font_sizes/font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(31.044865, -0.26666668, 31.888138, 0, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-121, -0.06817087, 30.065, 0, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_conbe"]
+_data = {
+&"Hide": SubResource("Animation_conbe"),
+&"Main": SubResource("Animation_nnsfv"),
+&"RESET": SubResource("Animation_wlfmm")
+}
+
+[node name="WaveTitle" type="Control" unique_id=1655160409]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nnsfv")
+
+[node name="Label" type="Label" parent="." unique_id=993537949]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -234.0
+offset_top = -121.0
+offset_right = 234.0
+offset_bottom = -30.999756
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_exonh")
+theme_override_font_sizes/font_size = 31
+text = "Wave #"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=358169058]
+libraries/ = SubResource("AnimationLibrary_conbe")
+
+[node name="temp" type="Timer" parent="." unique_id=1739007654]
+one_shot = true
+autostart = true
+
+[node name="PauseTime" type="Timer" parent="." unique_id=145880942]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="temp" to="." method="_on_temp_timeout"]
+[connection signal="timeout" from="PauseTime" to="." method="_on_pause_time_timeout"]
