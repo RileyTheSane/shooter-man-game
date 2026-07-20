@@ -33,7 +33,7 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="PentagonGloink" type="CharacterBody2D" unique_id=1851311926]
+[node name="PentagonGloink" type="CharacterBody2D" unique_id=1851311926 groups=["gloink"]]
 script = ExtResource("1_ybx0y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=796228901]
@@ -53,5 +53,11 @@ one_shot = true
 offset_top = -16.0
 offset_bottom = -16.0
 
+[node name="StartWait" type="Timer" parent="." unique_id=1033811253]
+wait_time = 0.001
+one_shot = true
+autostart = true
+
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
 [connection signal="timeout" from="RandomStartOffset" to="." method="_on_start_offset_timer_timeout"]
+[connection signal="timeout" from="StartWait" to="." method="_on_start_wait_timeout"]

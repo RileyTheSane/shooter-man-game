@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
-@export var max_health = 100.00
-@export var health = 100.00
-@export var damage = 30
-@export var enabled = true
+var max_health = 100.00
+var health = 100.00
+var damage = 30
+@export var enabled = false
+@export var shooter_man = null
 const SPEED = 60.0
 var attacking = false
 var launched = false
@@ -12,17 +13,17 @@ var indicator_scene = preload("res://scenes/heptagon_ground_indicator.tscn")
 
 
 func _ready() -> void:
-	if %ShooterMan && enabled:
+	if shooter_man && enabled:
 		$AttackStartDelay.wait_time = randf_range(0, 1)
 		$StartDelay.start()
 	$SimpleHealthBar.hide_bar()
 
 func _physics_process(_delta: float) -> void:
-	if %ShooterMan && enabled && !attacking:
-		var direction = (%ShooterMan.global_position - global_position).normalized()
+	if shooter_man && enabled && !attacking:
+		var direction = (shooter_man.global_position - global_position).normalized()
 		velocity = direction * SPEED
 		move_and_slide()
-	elif %ShooterMan && enabled && launched:
+	elif shooter_man && enabled && launched:
 		velocity.y = -600
 		velocity.x = 0
 		move_and_slide()
@@ -39,7 +40,7 @@ func _on_attack_start_delay_timeout() -> void:
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	# place indicator and pos near player
 	if anim_name == "Dig":
-		var pos = %ShooterMan.position + Vector2(randi_range(-75, 75), randi_range(-75, 75))
+		var pos = shooter_man.position + Vector2(randi_range(-75, 75), randi_range(-75, 75))
 		var indicator = indicator_scene.instantiate()
 		indicator.position = pos
 		position = pos
@@ -70,3 +71,7 @@ func update_health(change: float):
 		$SimpleHealthBar.update(max_health, health)
 		if health <= 0:
 			queue_free()
+
+
+func _on_start_wait_timeout() -> void:
+	enabled = true

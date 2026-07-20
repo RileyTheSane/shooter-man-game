@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bk5kpmb1ok4tn"]
+
+[ext_resource type="Script" uid="uid://c3wnc8304xboy" path="res://scripts/wave_player.gd" id="1_fqi5x"]
+[ext_resource type="PackedScene" uid="uid://chqt4iak3ydj5" path="res://scenes/wave_title.tscn" id="1_r8wh7"]
+
+[sub_resource type="Curve2D" id="Curve2D_r8wh7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -50, -50, 0, 0, 0, 0, 1010, -50, 0, 0, 0, 0, 1010, 590, 0, 0, 0, 0, -50, 590, 0, 0, 0, 0, -50, -50)
+}
+point_count = 5
+
+[node name="WavePlayer" type="Node2D" unique_id=444077422]
+script = ExtResource("1_fqi5x")
+
+[node name="WaveTitle" parent="." unique_id=1655160409 instance=ExtResource("1_r8wh7")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = 480.0
+offset_right = 480.0
+grow_vertical = 1
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Path2D" type="Path2D" parent="." unique_id=116147134]
+curve = SubResource("Curve2D_r8wh7")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1511157942]
+position = Vector2(-50, -50)

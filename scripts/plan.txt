@@ -53,4 +53,25 @@ Game Plan (in order):
 		you can aim with your mouse and shoot with left click. Then the narrator tells you to roll by
 		combining a movement key and space. As the gloinks start to close in you have to roll out to
 		the right to start the game. The gloinks disappear when bob rolls and the text "Wave 1" appears.
-	
+		
+		
+
+Waves:
+	1:
+		Traingles
+	2:
+		Triangles + like 2 squares
+	3: 
+		Squares & Triangles + a few pentagons
+	4:
+		More squares and triangles + more pentagons
+	5:
+		Squares and Pentagons + a few hexagons
+	6:
+		Pentagons + hexagons
+	7:
+		Pentagons + heptagons + a few hexagons
+	8:
+		Octagons + pentagons + a few hexagons
+	9:
+		Everybody yay

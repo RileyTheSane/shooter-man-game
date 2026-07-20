@@ -48,3 +48,10 @@ polygon = PackedVector2Array(0, -11, 11, 8, -11, 8)
 [node name="SimpleHealthBar" parent="." unique_id=736117579 instance=ExtResource("3_die1l")]
 offset_top = -18.0
 offset_bottom = -18.0
+
+[node name="StartWait" type="Timer" parent="." unique_id=1976594372]
+wait_time = 0.001
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="StartWait" to="." method="_on_start_wait_timeout"]

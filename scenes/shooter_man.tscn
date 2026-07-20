@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ddp100v4wj88o"]
 
 [ext_resource type="Script" uid="uid://byuayxpcgam7o" path="res://scripts/shooter_man.gd" id="1_1y536"]
-[ext_resource type="Texture2D" uid="uid://qvjf77den8vj" path="res://assets/ShooterManArt.png" id="1_uqv12"]
+[ext_resource type="Texture2D" uid="uid://8t5r8i4hc8lq" path="res://assets/ShooterManArt.png" id="1_uqv12"]
 [ext_resource type="PackedScene" uid="uid://dfkcx2bjo5xsa" path="res://scenes/health_bar.tscn" id="3_0ifkv"]
 [ext_resource type="PackedScene" uid="uid://dbx4q3jtc56k8" path="res://scenes/arm.tscn" id="3_bsdys"]
 
