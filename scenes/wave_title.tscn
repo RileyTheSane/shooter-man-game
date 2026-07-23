@@ -104,7 +104,7 @@ anchor_right = 0.5
 offset_left = -234.0
 offset_top = -121.0
 offset_right = 234.0
-offset_bottom = -30.999756
+offset_bottom = -30.999771
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_exonh")
@@ -116,14 +116,9 @@ vertical_alignment = 1
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=358169058]
 libraries/ = SubResource("AnimationLibrary_conbe")
 
-[node name="temp" type="Timer" parent="." unique_id=1739007654]
-one_shot = true
-autostart = true
-
 [node name="PauseTime" type="Timer" parent="." unique_id=145880942]
 wait_time = 2.0
 one_shot = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="timeout" from="temp" to="." method="_on_temp_timeout"]
 [connection signal="timeout" from="PauseTime" to="." method="_on_pause_time_timeout"]

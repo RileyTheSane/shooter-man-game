@@ -28,3 +28,14 @@ curve = SubResource("Curve2D_r8wh7")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1511157942]
 position = Vector2(-50, -50)
+
+[node name="PreventNewWave" type="Timer" parent="." unique_id=1397021697]
+wait_time = 3.0
+one_shot = true
+
+[node name="BetweenWaveDelay" type="Timer" parent="." unique_id=1455298737]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="PreventNewWave" to="." method="_on_delay_timeout"]
+[connection signal="timeout" from="BetweenWaveDelay" to="." method="_on_between_wave_delay_timeout"]

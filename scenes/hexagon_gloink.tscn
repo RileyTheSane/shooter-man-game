@@ -33,7 +33,9 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="HexagonGloink" type="CharacterBody2D" unique_id=183476767]
+[node name="HexagonGloink" type="CharacterBody2D" unique_id=183476767 groups=["gloink"]]
+collision_layer = 2
+collision_mask = 4
 script = ExtResource("1_lxxjh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1813580026]
@@ -44,9 +46,6 @@ offset = Vector2(0, -1)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1216551903]
 polygon = PackedVector2Array(-5, -10, 5, -10, 11, -1, 5, 9, -5, 9, -11, 0)
-
-[node name="StartOffset" type="Timer" parent="." unique_id=57832718]
-one_shot = true
 
 [node name="MaxLifetime" type="Timer" parent="." unique_id=417807135]
 wait_time = 15.0
@@ -63,7 +62,6 @@ wait_time = 0.001
 one_shot = true
 autostart = true
 
-[connection signal="timeout" from="StartOffset" to="." method="_on_start_offset_timeout"]
 [connection signal="timeout" from="MaxLifetime" to="." method="_on_max_lifetime_timeout"]
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

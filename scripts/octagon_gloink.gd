@@ -9,9 +9,6 @@ const SPEED = 60.0
 var octagon_projectile_script = preload("res://scenes/octagon_projectile.tscn")
 
 func _ready() -> void:
-	if enabled:
-		$RandomStartOffset.wait_time = randf_range(0, 1)
-		$RandomStartOffset.start()
 	$SimpleHealthBar.hide_bar()
 
 func _physics_process(_delta: float) -> void:
@@ -36,8 +33,6 @@ func _on_shoot_timer_timeout() -> void:
 			gloink_proj.position = direction * 20 + position # move the proj a little bit in the direction of the target so the colliion body doesn't collide with the gloink's collider
 			$"../../Projectiles".add_child(gloink_proj)
 
-func _on_start_offset_timer_timeout() -> void:
-	$ShootTimer.start()
 
 func update_health(change: float):
 	health += change
@@ -49,3 +44,4 @@ func update_health(change: float):
 
 func _on_start_wait_timeout() -> void:
 	enabled = true
+	$ShootTimer.start()

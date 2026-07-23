@@ -170,7 +170,7 @@ offset_bottom = -6.0
 grow_vertical = 0
 
 [node name="ShootCooldown" type="Timer" parent="." unique_id=992215653]
-wait_time = 0.1
+wait_time = 0.009999999999999998
 one_shot = true
 
 [connection signal="body_entered" from="Collision" to="." method="_on_collision_body_entered"]

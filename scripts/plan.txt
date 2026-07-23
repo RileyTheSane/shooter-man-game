@@ -75,3 +75,23 @@ Waves:
 		Octagons + pentagons + a few hexagons
 	9:
 		Everybody yay
+
+
+Changelog 7/22/2026
+Fixed Hexagons colliding with other gloinks and each other
+Made it so that heptagons can only shoot up from below the player
+Fixed octagons not shooting
+Coded in waves 4-9
+Made waves play consecutively
+
+
+
+
+
+
+
+
+
+
+
+
