@@ -39,7 +39,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		var indicator = indicator_scene.instantiate()
 		indicator.position = pos
 		position = pos
-		$"../..".add_child(indicator)
+		$"../../Effects".add_child(indicator)
 		
 		$LaunchAnimPause.start() # start timer that ends when the launch animation does the launch thing
 

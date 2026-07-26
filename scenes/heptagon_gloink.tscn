@@ -114,10 +114,6 @@ frame_progress = 0.6341338
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=949046058]
 libraries/ = SubResource("AnimationLibrary_gooko")
 
-[node name="StartDelay" type="Timer" parent="." unique_id=862663092]
-wait_time = 10.0
-one_shot = true
-
 [node name="AttackStartDelay" type="Timer" parent="." unique_id=2010787062]
 wait_time = 10.0
 one_shot = true
@@ -144,7 +140,6 @@ autostart = true
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1911315258]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="timeout" from="StartDelay" to="." method="_on_start_delay_timeout"]
 [connection signal="timeout" from="AttackStartDelay" to="." method="_on_attack_start_delay_timeout"]
 [connection signal="timeout" from="LaunchAnimPause" to="." method="_on_launch_anim_pause_timeout"]
 [connection signal="timeout" from="MaxFlyTime" to="." method="_on_max_fly_time_timeout"]

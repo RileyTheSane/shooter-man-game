@@ -3,10 +3,15 @@
 [ext_resource type="PackedScene" uid="uid://d4jrm8w43jxhb" path="res://scenes/hud.tscn" id="1_0wfyh"]
 [ext_resource type="Script" uid="uid://bqab77rbqc1ix" path="res://scripts/main.gd" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://ddp100v4wj88o" path="res://scenes/shooter_man.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://7p45f0cuh356" path="res://scripts/camera_2d.gd" id="2_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bk5kpmb1ok4tn" path="res://scenes/wave_player.tscn" id="9_85g3d"]
 
 [node name="Main" type="Node2D" unique_id=78608440]
 script = ExtResource("1_jyhfs")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=791576995]
+position = Vector2(480, 270)
+script = ExtResource("2_tbgi4")
 
 [node name="Timer" type="Timer" parent="." unique_id=273899577]
 wait_time = 3.0
@@ -22,10 +27,13 @@ unique_name_in_owner = true
 [node name="Projectiles" type="Node" parent="." unique_id=1808145432]
 unique_name_in_owner = true
 
+[node name="Effects" type="Node" parent="." unique_id=1304449091]
+unique_name_in_owner = true
+
 [node name="ShooterMan" parent="." unique_id=641757937 instance=ExtResource("1_o5qli")]
 unique_name_in_owner = true
 z_index = 1
-position = Vector2(483, 282)
+position = Vector2(480, 270)
 
 [node name="WavePlayer" parent="." unique_id=444077422 instance=ExtResource("9_85g3d")]
 

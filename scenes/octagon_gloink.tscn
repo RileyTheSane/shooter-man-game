@@ -38,6 +38,7 @@ script = ExtResource("1_bmdc7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=796228901]
 sprite_frames = SubResource("SpriteFrames_20huk")
+autoplay = "default"
 frame_progress = 0.76757556
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=357391936]

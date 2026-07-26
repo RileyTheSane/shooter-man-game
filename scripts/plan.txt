@@ -85,13 +85,9 @@ Coded in waves 4-9
 Made waves play consecutively
 
 
-
-
-
-
-
-
-
-
-
-
+Changelog 7/25/2026
+Added functionality for the wave player to pause everything
+Added death sprites to bob
+Added a zoom animation for when bob dies
+That all now works together to create a cool little animation
+TODO: fix hexagon offset

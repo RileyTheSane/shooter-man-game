@@ -5,6 +5,18 @@
 [ext_resource type="PackedScene" uid="uid://dfkcx2bjo5xsa" path="res://scenes/health_bar.tscn" id="3_0ifkv"]
 [ext_resource type="PackedScene" uid="uid://dbx4q3jtc56k8" path="res://scenes/arm.tscn" id="3_bsdys"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bval2"]
+atlas = ExtResource("1_uqv12")
+region = Rect2(0, 0, 45, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sekso"]
+atlas = ExtResource("1_uqv12")
+region = Rect2(45, 0, 45, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyvhn"]
+atlas = ExtResource("1_uqv12")
+region = Rect2(90, 0, 45, 78)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_1y536"]
 atlas = ExtResource("1_uqv12")
 region = Rect2(0, 78, 45, 78)
@@ -63,6 +75,20 @@ region = Rect2(135, 234, 45, 78)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s0wgv"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bval2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sekso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qyvhn")
+}],
+"loop": true,
+"name": &"deadarms",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1y536")
@@ -141,7 +167,7 @@ script = ExtResource("1_1y536")
 position = Vector2(-6, 0)
 sprite_frames = SubResource("SpriteFrames_s0wgv")
 animation = &"idle"
-frame_progress = 0.7180495
+frame_progress = 0.6871973
 
 [node name="Arm" parent="." unique_id=1917099730 instance=ExtResource("3_bsdys")]
 
@@ -170,9 +196,14 @@ offset_bottom = -6.0
 grow_vertical = 0
 
 [node name="ShootCooldown" type="Timer" parent="." unique_id=992215653]
-wait_time = 0.009999999999999998
+wait_time = 0.05
+one_shot = true
+
+[node name="DeathPause" type="Timer" parent="." unique_id=1979991297]
+wait_time = 0.5
 one_shot = true
 
 [connection signal="body_entered" from="Collision" to="." method="_on_collision_body_entered"]
 [connection signal="timeout" from="DamageTick" to="." method="_on_damage_tick_timeout"]
 [connection signal="timeout" from="ShootCooldown" to="." method="_on_shoot_cooldown_timeout"]
+[connection signal="timeout" from="DeathPause" to="." method="_on_death_pause_timeout"]
