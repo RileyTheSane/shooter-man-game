@@ -78,7 +78,7 @@ func _on_collision_body_entered(body: Node2D) -> void:
 		can_move = false # stop normal functions
 		can_shoot = false
 		arm_can_rotate = false
-		$"../WavePlayer".stop_wave() # stop all fo the gloinks
+		$"../WavePlayer".stop_wave() # stop all of the gloinks
 		$Body.play("deadarms") # start arm visible animation
 		$Arm.visible = false # turn rotating arm and health bar invis
 		$HealthBar.hide()

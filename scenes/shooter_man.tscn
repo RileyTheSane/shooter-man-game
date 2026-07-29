@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://ddp100v4wj88o"]
 
 [ext_resource type="Script" uid="uid://byuayxpcgam7o" path="res://scripts/shooter_man.gd" id="1_1y536"]
-[ext_resource type="Texture2D" uid="uid://8t5r8i4hc8lq" path="res://assets/ShooterManArt.png" id="1_uqv12"]
+[ext_resource type="Texture2D" uid="uid://b7ucgvbofyu8y" path="res://assets/ShooterManArt.png" id="1_uqv12"]
 [ext_resource type="PackedScene" uid="uid://dfkcx2bjo5xsa" path="res://scenes/health_bar.tscn" id="3_0ifkv"]
 [ext_resource type="PackedScene" uid="uid://dbx4q3jtc56k8" path="res://scenes/arm.tscn" id="3_bsdys"]
+[ext_resource type="Texture2D" uid="uid://b2no6lmp05ixu" path="res://assets/DeathAnimation.png" id="3_s0wgv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bval2"]
 atlas = ExtResource("1_uqv12")
@@ -16,6 +17,18 @@ region = Rect2(45, 0, 45, 78)
 [sub_resource type="AtlasTexture" id="AtlasTexture_qyvhn"]
 atlas = ExtResource("1_uqv12")
 region = Rect2(90, 0, 45, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uymvq"]
+atlas = ExtResource("3_s0wgv")
+region = Rect2(0, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isf3l"]
+atlas = ExtResource("3_s0wgv")
+region = Rect2(120, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpgot"]
+atlas = ExtResource("3_s0wgv")
+region = Rect2(240, 0, 120, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1y536"]
 atlas = ExtResource("1_uqv12")
@@ -88,6 +101,20 @@ animations = [{
 "loop": true,
 "name": &"deadarms",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uymvq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isf3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpgot")
+}],
+"loop": true,
+"name": &"deathAnimation",
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -166,8 +193,7 @@ script = ExtResource("1_1y536")
 [node name="Body" type="AnimatedSprite2D" parent="." unique_id=145742071]
 position = Vector2(-6, 0)
 sprite_frames = SubResource("SpriteFrames_s0wgv")
-animation = &"idle"
-frame_progress = 0.6871973
+animation = &"deadarms"
 
 [node name="Arm" parent="." unique_id=1917099730 instance=ExtResource("3_bsdys")]
 
