@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var health = 1.00
+@export var health = 150.00
 @export var max_health = 150.00
 const MOVE_SPEED = 160.00 # originally 160
 var can_take_damage = true
@@ -79,10 +79,11 @@ func _on_collision_body_entered(body: Node2D) -> void:
 		can_shoot = false
 		arm_can_rotate = false
 		$"../WavePlayer".stop_wave() # stop all of the gloinks
-		$Body.play("deadarms") # start arm visible animation
 		$Arm.visible = false # turn rotating arm and health bar invis
 		$HealthBar.hide()
 		$DeathPause.start() # start a timer so that the camera doesn't immediately zoom in on bob
+		$DeathAnimTimer.start() # start the death animation sequence
+		$Body.play("deadarms")
 
 func _on_shoot_cooldown_timeout() -> void:
 	shooting = false
@@ -90,3 +91,22 @@ func _on_shoot_cooldown_timeout() -> void:
 
 func _on_death_pause_timeout() -> void:
 	$"../Camera2D".zoom_into_player()
+	
+	
+var curDeathAnim = 0
+func updateDeathAnim():
+	curDeathAnim += 1
+	
+	match curDeathAnim:
+		1:
+			$Body.play("deathAnimation1")
+			$DeathAnimTimer.start()
+			$Body.offset = Vector2(22, 0)
+		2:
+			$Body.play("deathAnimation2")
+			$DeathAnimTimer.start()
+		4:
+			curDeathAnim = 0
+
+func _on_death_anim_timer_timeout() -> void:
+	updateDeathAnim()

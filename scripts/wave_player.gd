@@ -12,7 +12,7 @@ var pause_has_happened = false
 var wave_num = 1
 
 func start():
-	wave9()
+	wave1()
 	$PreventNewWave.start()
 
 func _physics_process(_delta: float) -> void:

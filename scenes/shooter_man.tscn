@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://b7ucgvbofyu8y" path="res://assets/ShooterManArt.png" id="1_uqv12"]
 [ext_resource type="PackedScene" uid="uid://dfkcx2bjo5xsa" path="res://scenes/health_bar.tscn" id="3_0ifkv"]
 [ext_resource type="PackedScene" uid="uid://dbx4q3jtc56k8" path="res://scenes/arm.tscn" id="3_bsdys"]
-[ext_resource type="Texture2D" uid="uid://b2no6lmp05ixu" path="res://assets/DeathAnimation.png" id="3_s0wgv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bval2"]
 atlas = ExtResource("1_uqv12")
@@ -19,16 +18,28 @@ atlas = ExtResource("1_uqv12")
 region = Rect2(90, 0, 45, 78)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uymvq"]
-atlas = ExtResource("3_s0wgv")
-region = Rect2(0, 0, 120, 80)
+atlas = ExtResource("1_uqv12")
+region = Rect2(211, 2, 120, 77)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_isf3l"]
-atlas = ExtResource("3_s0wgv")
-region = Rect2(120, 0, 120, 80)
+atlas = ExtResource("1_uqv12")
+region = Rect2(211, 81, 120, 77)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cpgot"]
-atlas = ExtResource("3_s0wgv")
-region = Rect2(240, 0, 120, 80)
+atlas = ExtResource("1_uqv12")
+region = Rect2(211, 160, 120, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vh45"]
+atlas = ExtResource("1_uqv12")
+region = Rect2(211, 239, 120, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0xn0"]
+atlas = ExtResource("1_uqv12")
+region = Rect2(211, 318, 120, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e85x3"]
+atlas = ExtResource("1_uqv12")
+region = Rect2(211, 397, 120, 77)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1y536"]
 atlas = ExtResource("1_uqv12")
@@ -113,8 +124,22 @@ animations = [{
 "texture": SubResource("AtlasTexture_cpgot")
 }],
 "loop": true,
-"name": &"deathAnimation",
-"speed": 1.0
+"name": &"deathAnimation1",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vh45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0xn0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e85x3")
+}],
+"loop": true,
+"name": &"deathAnimation2",
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -198,6 +223,7 @@ animation = &"deadarms"
 [node name="Arm" parent="." unique_id=1917099730 instance=ExtResource("3_bsdys")]
 
 [node name="Collision" type="Area2D" parent="." unique_id=399198283]
+visible = false
 collision_layer = 7
 collision_mask = 7
 
@@ -229,7 +255,12 @@ one_shot = true
 wait_time = 0.5
 one_shot = true
 
+[node name="DeathAnimTimer" type="Timer" parent="." unique_id=1945534577]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="body_entered" from="Collision" to="." method="_on_collision_body_entered"]
 [connection signal="timeout" from="DamageTick" to="." method="_on_damage_tick_timeout"]
 [connection signal="timeout" from="ShootCooldown" to="." method="_on_shoot_cooldown_timeout"]
 [connection signal="timeout" from="DeathPause" to="." method="_on_death_pause_timeout"]
+[connection signal="timeout" from="DeathAnimTimer" to="." method="_on_death_anim_timer_timeout"]
