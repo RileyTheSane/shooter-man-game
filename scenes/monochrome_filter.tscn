@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cdjiovqnytrqa"]
+
+[ext_resource type="Shader" uid="uid://refl75foh68p" path="res://scripts/monochrome.gdshader" id="1_5nyua"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i04e3"]
+shader = ExtResource("1_5nyua")
+
+[node name="MonochromeFilter" type="CanvasLayer" unique_id=1425572513]
+layer = 5
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1364606963]
+material = SubResource("ShaderMaterial_i04e3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)

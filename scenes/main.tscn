@@ -4,14 +4,28 @@
 [ext_resource type="Script" uid="uid://bqab77rbqc1ix" path="res://scripts/main.gd" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://ddp100v4wj88o" path="res://scenes/shooter_man.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://7p45f0cuh356" path="res://scripts/camera_2d.gd" id="2_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://cdjiovqnytrqa" path="res://scenes/monochrome_filter.tscn" id="4_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bk5kpmb1ok4tn" path="res://scenes/wave_player.tscn" id="9_85g3d"]
 
 [node name="Main" type="Node2D" unique_id=78608440]
 script = ExtResource("1_jyhfs")
 
+[node name="Background" type="CanvasLayer" parent="." unique_id=600377220]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="Background" unique_id=2064265203]
+offset_left = -480.0
+offset_top = -270.0
+offset_right = 1440.0
+offset_bottom = 810.0
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=791576995]
 position = Vector2(480, 270)
 script = ExtResource("2_tbgi4")
+
+[node name="ZoomPause" type="Timer" parent="Camera2D" unique_id=1327462866]
+wait_time = 0.5
+one_shot = true
 
 [node name="Timer" type="Timer" parent="." unique_id=273899577]
 wait_time = 3.0
@@ -19,7 +33,9 @@ one_shot = true
 autostart = true
 
 [node name="HUD" parent="." unique_id=153174832 instance=ExtResource("1_0wfyh")]
-layer = -1
+layer = 6
+
+[node name="MonochromeFilter" parent="." unique_id=1425572513 instance=ExtResource("4_tefeu")]
 
 [node name="Gloinks" type="Node" parent="." unique_id=1597259995]
 unique_name_in_owner = true
@@ -37,4 +53,5 @@ position = Vector2(480, 270)
 
 [node name="WavePlayer" parent="." unique_id=444077422 instance=ExtResource("9_85g3d")]
 
+[connection signal="timeout" from="Camera2D/ZoomPause" to="Camera2D" method="_on_zoom_pause_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

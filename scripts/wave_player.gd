@@ -12,7 +12,8 @@ var pause_has_happened = false
 var wave_num = 1
 
 func start():
-	wave1()
+	wave9()
+	%ShooterMan.can_take_damage = false # make him invincible until the wave actually starts
 	$PreventNewWave.start()
 
 func _physics_process(_delta: float) -> void:
@@ -157,6 +158,9 @@ func stop_wave():
 			gloink.get_node("LaunchAnimPause").paused = true
 			gloink.get_node("AttackStartDelay").paused = true
 			gloink.get_node("AnimationPlayer").pause()
+		
+		if gloink.has_node("MaxLifetime"): # stop hexagons from decaying
+			gloink.get_node("MaxLifetime").paused = true
 		gloink.enabled = false
 		
 	var effects = %Effects.get_children() # get all effects to pause from playing

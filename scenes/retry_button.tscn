@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://drxwebmc8wfgi"]
+
+[ext_resource type="Texture2D" uid="uid://b7ucgvbofyu8y" path="res://assets/ShooterManArt.png" id="1_5mc3x"]
+[ext_resource type="Script" uid="uid://ckensujehkqpj" path="res://scripts/retry_button.gd" id="2_mr0rv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tipki"]
+texture = ExtResource("1_5mc3x")
+texture_margin_left = 20.0
+texture_margin_top = 13.0
+texture_margin_right = 20.0
+texture_margin_bottom = 13.0
+region_rect = Rect2(333, 2, 260, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mc3x"]
+atlas = ExtResource("1_5mc3x")
+region = Rect2(333, 203, 140, 33)
+
+[sub_resource type="Animation" id="Animation_o6xl0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RetryButton:theme_override_styles/normal:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(333, 2, 260, 64)]
+}
+
+[sub_resource type="Animation" id="Animation_tipki"]
+resource_name = "new_animation"
+length = 0.40000167
+loop_mode = 1
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RetryButton:theme_override_styles/normal:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.28333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(333, 2, 260, 64), Rect2(333, 69, 260, 64), Rect2(333, 136, 260, 64)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_85g3d"]
+_data = {
+&"RESET": SubResource("Animation_o6xl0"),
+&"wiggle": SubResource("Animation_tipki")
+}
+
+[sub_resource type="Animation" id="Animation_5mc3x"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(572, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_mr0rv"]
+resource_name = "enter"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(572, -0.25, 0, 0.26666668, -119.83148, 446.3121, -0.26666665, 1.4641113, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iqd1j"]
+_data = {
+&"RESET": SubResource("Animation_5mc3x"),
+&"enter": SubResource("Animation_mr0rv")
+}
+
+[node name="RetryButton" type="Button" unique_id=1111441099]
+offset_left = 350.0
+offset_top = 572.0
+offset_right = 610.0
+offset_bottom = 636.0005
+theme_override_styles/normal = SubResource("StyleBoxTexture_tipki")
+script = ExtResource("2_mr0rv")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=721883453]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -340.5
+offset_top = -337.0
+offset_right = 340.5
+offset_bottom = 174.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("AtlasTexture_5mc3x")
+stretch_mode = 3
+
+[node name="WiggleAnimationPlayer" type="AnimationPlayer" parent="." unique_id=75787742]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_85g3d")
+autoplay = &"wiggle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=793415331]
+libraries/ = SubResource("AnimationLibrary_iqd1j")

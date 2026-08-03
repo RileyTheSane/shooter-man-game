@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://d4jrm8w43jxhb"]
 
-[node name="HUD" type="CanvasLayer" unique_id=153174832]
+[ext_resource type="PackedScene" uid="uid://drxwebmc8wfgi" path="res://scenes/retry_button.tscn" id="1_ahhtf"]
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1692584798]
-offset_left = -480.0
-offset_top = -270.0
-offset_right = 1440.0
-offset_bottom = 810.0
+[node name="HUD" type="CanvasLayer" unique_id=153174832]
+layer = 6
+
+[node name="RetryButton" parent="." unique_id=1111441099 instance=ExtResource("1_ahhtf")]

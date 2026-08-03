@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://chqt4iak3ydj5"]
 
-[ext_resource type="FontFile" uid="uid://bb4avnk27rmot" path="res://assets/PixelOperator8.ttf" id="1_exonh"]
+[ext_resource type="FontFile" uid="uid://cby51m0vddq41" path="res://assets/PixelOperator8.ttf" id="1_exonh"]
 [ext_resource type="Script" uid="uid://bew648ot0bpbv" path="res://scripts/wave_title.gd" id="1_nnsfv"]
 
 [sub_resource type="Animation" id="Animation_conbe"]
 resource_name = "Hide"
+length = 0.43333334
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true

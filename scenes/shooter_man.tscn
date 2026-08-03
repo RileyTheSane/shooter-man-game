@@ -218,7 +218,7 @@ script = ExtResource("1_1y536")
 [node name="Body" type="AnimatedSprite2D" parent="." unique_id=145742071]
 position = Vector2(-6, 0)
 sprite_frames = SubResource("SpriteFrames_s0wgv")
-animation = &"deadarms"
+animation = &"deathAnimation2"
 
 [node name="Arm" parent="." unique_id=1917099730 instance=ExtResource("3_bsdys")]
 
@@ -251,16 +251,12 @@ grow_vertical = 0
 wait_time = 0.05
 one_shot = true
 
-[node name="DeathPause" type="Timer" parent="." unique_id=1979991297]
-wait_time = 0.5
-one_shot = true
-
 [node name="DeathAnimTimer" type="Timer" parent="." unique_id=1945534577]
 wait_time = 3.0
 one_shot = true
 
+[connection signal="animation_finished" from="Body" to="." method="_on_body_animation_finished"]
 [connection signal="body_entered" from="Collision" to="." method="_on_collision_body_entered"]
 [connection signal="timeout" from="DamageTick" to="." method="_on_damage_tick_timeout"]
 [connection signal="timeout" from="ShootCooldown" to="." method="_on_shoot_cooldown_timeout"]
-[connection signal="timeout" from="DeathPause" to="." method="_on_death_pause_timeout"]
 [connection signal="timeout" from="DeathAnimTimer" to="." method="_on_death_anim_timer_timeout"]
