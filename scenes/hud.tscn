@@ -1,8 +1,24 @@
 [gd_scene format=3 uid="uid://d4jrm8w43jxhb"]
 
 [ext_resource type="PackedScene" uid="uid://drxwebmc8wfgi" path="res://scenes/retry_button.tscn" id="1_ahhtf"]
+[ext_resource type="Script" uid="uid://ba4s1cfuifck1" path="res://scripts/hud.gd" id="1_oo0fn"]
+
+[sub_resource type="GDScript" id="GDScript_5ysmq"]
+script/source = "extends Button
+
+func _ready(): # hide the button so it can't be seen outside of the frame
+	visible = false
+
+func show_button(): # play the animation to enter the button into the scene
+	visible = true
+	$AnimationPlayer.play(\"enter\")
+"
 
 [node name="HUD" type="CanvasLayer" unique_id=153174832]
 layer = 6
+script = ExtResource("1_oo0fn")
 
 [node name="RetryButton" parent="." unique_id=1111441099 instance=ExtResource("1_ahhtf")]
+script = SubResource("GDScript_5ysmq")
+
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]

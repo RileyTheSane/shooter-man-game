@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://drxwebmc8wfgi"]
 
 [ext_resource type="Texture2D" uid="uid://b7ucgvbofyu8y" path="res://assets/ShooterManArt.png" id="1_5mc3x"]
-[ext_resource type="Script" uid="uid://ckensujehkqpj" path="res://scripts/retry_button.gd" id="2_mr0rv"]
+[ext_resource type="Script" uid="uid://ce6b48an6ygre" path="res://scripts/retry_button.gd" id="2_mr0rv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tipki"]
 texture = ExtResource("1_5mc3x")
@@ -94,6 +94,7 @@ offset_top = 572.0
 offset_right = 610.0
 offset_bottom = 636.0005
 theme_override_styles/normal = SubResource("StyleBoxTexture_tipki")
+theme_override_styles/hover = SubResource("StyleBoxTexture_tipki")
 script = ExtResource("2_mr0rv")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=721883453]
@@ -109,6 +110,7 @@ offset_right = 340.5
 offset_bottom = 174.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 texture = SubResource("AtlasTexture_5mc3x")
 stretch_mode = 3
 
@@ -119,3 +121,6 @@ autoplay = &"wiggle"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=793415331]
 libraries/ = SubResource("AnimationLibrary_iqd1j")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="gui_input" from="TextureRect" to="." method="_on_texture_rect_gui_input"]

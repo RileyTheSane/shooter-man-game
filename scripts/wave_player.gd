@@ -12,7 +12,7 @@ var pause_has_happened = false
 var wave_num = 1
 
 func start():
-	wave9()
+	wave1()
 	%ShooterMan.can_take_damage = false # make him invincible until the wave actually starts
 	$PreventNewWave.start()
 
@@ -173,3 +173,6 @@ func stop_wave():
 		if proj.has_node("Decay"):
 			proj.get_node("Decay").paused = true
 		proj.enabled = false 
+
+func reset(): # set the wave count back to 1
+	wave_num = 1
