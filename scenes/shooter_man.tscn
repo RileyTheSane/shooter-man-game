@@ -218,7 +218,7 @@ script = ExtResource("1_1y536")
 [node name="Body" type="AnimatedSprite2D" parent="." unique_id=145742071]
 position = Vector2(-6, 0)
 sprite_frames = SubResource("SpriteFrames_s0wgv")
-animation = &"deathAnimation2"
+animation = &"idle"
 
 [node name="Arm" parent="." unique_id=1917099730 instance=ExtResource("3_bsdys")]
 

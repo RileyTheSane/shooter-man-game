@@ -23,6 +23,9 @@ func _physics_process(_delta: float) -> void:
 		elif pause_has_happened:
 			wave_num += 1
 			match wave_num:
+				1:
+					wave1()
+					$PreventNewWave.start()
 				2:
 					wave2()
 					$PreventNewWave.start()
@@ -174,5 +177,5 @@ func stop_wave():
 			proj.get_node("Decay").paused = true
 		proj.enabled = false 
 
-func reset(): # set the wave count back to 1
-	wave_num = 1
+func reset(): # set the wave back to the first one
+	wave_num = 0

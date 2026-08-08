@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c1i3bl82aodm0" path="res://scripts/health_bar.gd" id="1_1bvlm"]
 
 [node name="HealthBar" type="Control" unique_id=316176200]
+z_index = 1
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

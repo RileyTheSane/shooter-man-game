@@ -24,6 +24,6 @@ func hide_bar():
 	$Bar.visible = false
 
 func show_bar():
-	$Outline.visible = true
-	$Background.visible = true
-	$Bar.visible = true
+	$Outline.visible = false
+	$Background.visible = false
+	$Bar.visible = false

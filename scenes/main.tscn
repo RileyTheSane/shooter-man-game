@@ -27,10 +27,9 @@ script = ExtResource("2_tbgi4")
 wait_time = 0.5
 one_shot = true
 
-[node name="Timer" type="Timer" parent="." unique_id=273899577]
+[node name="ResetTimer" type="Timer" parent="." unique_id=273899577]
 wait_time = 3.0
 one_shot = true
-autostart = true
 
 [node name="HUD" parent="." unique_id=153174832 instance=ExtResource("1_0wfyh")]
 
@@ -61,4 +60,4 @@ offset_bottom = 810.0
 color = Color(1, 1, 1, 0)
 
 [connection signal="timeout" from="Camera2D/ZoomPause" to="Camera2D" method="_on_zoom_pause_timeout"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="ResetTimer" to="." method="_on_reset_timer_timeout"]

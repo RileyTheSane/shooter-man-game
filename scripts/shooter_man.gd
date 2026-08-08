@@ -80,11 +80,12 @@ func _on_collision_body_entered(body: Node2D) -> void:
 		arm_can_rotate = false
 		$"../WavePlayer".stop_wave() # stop all of the gloinks
 		$Arm.visible = false # turn rotating arm and health bar invis
-		$HealthBar.hide()
+		$HealthBar.hide_bar()
 		$"../Camera2D".play_death_camera_effects() # start the camera effects eg: zoom and greyscale
 		$DeathAnimTimer.start() # start the death animation sequence
 		$Body.flip_h = false
 		$Body.play("deadarms")
+		$Body.offset = Vector2(0, 0)
 
 func _on_shoot_cooldown_timeout() -> void:
 	shooting = false
@@ -109,3 +110,12 @@ func updateDeathAnim():
 
 func _on_death_anim_timer_timeout() -> void:
 	updateDeathAnim()
+	
+
+func reset():
+	$HealthBar.position = Vector2(480, 270 - 46)
+	health = 1 # reset health
+	can_move = true # resume normal functions
+	can_shoot = true
+	arm_can_rotate = true
+	$Arm.visible = true
