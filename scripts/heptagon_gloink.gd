@@ -13,7 +13,7 @@ var indicator_scene = preload("res://scenes/heptagon_ground_indicator.tscn")
 
 
 func _ready() -> void:
-	$SimpleHealthBar.hide_bar()
+	$SimpleHealthBar.hide()
 
 func _physics_process(_delta: float) -> void:
 	if shooter_man && enabled && !attacking:
@@ -62,7 +62,7 @@ func _on_max_fly_time_timeout() -> void:
 func update_health(change: float):
 	if !launched:
 		health += change
-		$SimpleHealthBar.show_bar()
+		$SimpleHealthBar.show()
 		$SimpleHealthBar.update(max_health, health)
 		if health <= 0:
 			queue_free()

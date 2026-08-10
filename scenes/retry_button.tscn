@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b7ucgvbofyu8y" path="res://assets/ShooterManArt.png" id="1_5mc3x"]
 [ext_resource type="Script" uid="uid://ce6b48an6ygre" path="res://scripts/retry_button.gd" id="2_mr0rv"]
+[ext_resource type="FontFile" uid="uid://cby51m0vddq41" path="res://assets/PixelOperator8.ttf" id="3_iqd1j"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tipki"]
 texture = ExtResource("1_5mc3x")
@@ -9,6 +10,8 @@ texture_margin_left = 20.0
 texture_margin_top = 13.0
 texture_margin_right = 20.0
 texture_margin_bottom = 13.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 region_rect = Rect2(333, 2, 260, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5mc3x"]
@@ -180,6 +183,27 @@ autoplay = &"wiggle"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=793415331]
 libraries/ = SubResource("AnimationLibrary_iqd1j")
 
-[connection signal="pressed" from="." to="." method="_on_pressed"]
+[node name="Label" type="Label" parent="." unique_id=1660656096]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -21.000183
+offset_right = 80.0
+offset_bottom = 23.999817
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_iqd1j")
+theme_override_font_sizes/font_size = 32
+text = "Again?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="gui_input" from="TextureRect" to="." method="_on_texture_rect_gui_input"]
+[connection signal="animation_changed" from="AnimationPlayer" to="." method="_on_animation_player_animation_changed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="current_animation_changed" from="AnimationPlayer" to="." method="_on_animation_player_current_animation_changed"]

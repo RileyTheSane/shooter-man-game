@@ -10,7 +10,7 @@ const SPEED = 60.0
 var start = false
 
 func _ready() -> void:
-	$SimpleHealthBar.hide_bar()
+	$SimpleHealthBar.hide()
 
 func _physics_process(_delta: float) -> void:
 	if shooter_man && enabled:
@@ -20,7 +20,7 @@ func _physics_process(_delta: float) -> void:
 
 func update_health(change: float):
 	health += change
-	$SimpleHealthBar.show_bar()
+	$SimpleHealthBar.show()
 	$SimpleHealthBar.update(max_health, health)
 	if health <= 0:
 		queue_free()

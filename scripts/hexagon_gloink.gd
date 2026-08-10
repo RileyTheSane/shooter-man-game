@@ -9,7 +9,7 @@ const SPEED = 300.0
 var entered_screen = false
 
 func _ready() -> void:
-	$SimpleHealthBar.hide_bar()
+	$SimpleHealthBar.hide()
 
 
 func _physics_process(_delta: float) -> void:
@@ -30,7 +30,7 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 
 func update_health(change: float):
 	health += change
-	$SimpleHealthBar.show_bar()
+	$SimpleHealthBar.show()
 	$SimpleHealthBar.update(max_health, health)
 	if health <= 0:
 		queue_free()

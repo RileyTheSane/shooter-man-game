@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var health = 1.00
-@export var max_health = 150.00
-const MOVE_SPEED = 160.00 # originally 160
+@export var health = 40.00
+@export var max_health = 40.00
+const MOVE_SPEED = 160.00
 @export var can_take_damage = true
 var shooting = false
 
@@ -13,7 +13,7 @@ var arm_can_rotate = true
 var bullet_scene = preload("res://scenes/bullet.tscn")
 
 func _ready() -> void:
-	$HealthBar.hide_bar()
+	$HealthBar.hide()
 	
 func _physics_process(delta: float) -> void:
 	if can_move:
@@ -80,7 +80,7 @@ func _on_collision_body_entered(body: Node2D) -> void:
 		arm_can_rotate = false
 		$"../WavePlayer".stop_wave() # stop all of the gloinks
 		$Arm.visible = false # turn rotating arm and health bar invis
-		$HealthBar.hide_bar()
+		$HealthBar.hide()
 		$"../Camera2D".play_death_camera_effects() # start the camera effects eg: zoom and greyscale
 		$DeathAnimTimer.start() # start the death animation sequence
 		$Body.flip_h = false
@@ -113,8 +113,8 @@ func _on_death_anim_timer_timeout() -> void:
 	
 
 func reset():
-	$HealthBar.position = Vector2(480, 270 - 46)
-	health = 1 # reset health
+	position = Vector2(480, 270)
+	health = max_health # reset health
 	can_move = true # resume normal functions
 	can_shoot = true
 	arm_can_rotate = true

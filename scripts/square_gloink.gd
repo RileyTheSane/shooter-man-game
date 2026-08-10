@@ -8,7 +8,7 @@ var damage = 25
 var speed = 80.0
 
 func _ready() -> void:
-	$SimpleHealthBar.hide_bar()
+	$SimpleHealthBar.hide()
 
 
 func _physics_process(_delta: float) -> void:
@@ -30,7 +30,7 @@ func _on_roll_stop_timeout() -> void: # when the roll stops, reset the rotation 
 
 func update_health(change: float):
 	health += change
-	$SimpleHealthBar.show_bar()
+	$SimpleHealthBar.show()
 	$SimpleHealthBar.update(max_health, health)
 	if health <= 0:
 		queue_free()
