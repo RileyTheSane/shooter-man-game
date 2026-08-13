@@ -159,6 +159,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_tipki")
 script = ExtResource("2_mr0rv")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=721883453]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -199,7 +200,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_iqd1j")
 theme_override_font_sizes/font_size = 32
-text = "Again?"
+text = "Retry"
 horizontal_alignment = 1
 vertical_alignment = 1
 

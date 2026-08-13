@@ -15,4 +15,4 @@ func _on_pause_time_timeout() -> void:
 	$AnimationPlayer.play("Hide")
 
 func update_wave_num(num):
-	$Label.text = "Wave " + str(num)
+	pass
