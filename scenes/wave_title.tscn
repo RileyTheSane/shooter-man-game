@@ -9,7 +9,7 @@ length = 0.43333334
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:position:y")
+tracks/0/path = NodePath("WaveText:position:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -20,23 +20,23 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("TextureRect:scale:x")
+tracks/1/path = NodePath("WaveText:scale:x")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(2.74, -0.21666667, 0, 0.033333335, 0.0012602806, 1, -0.26583335, 1.1331208, 0, 0),
+"points": PackedFloat32Array(2.5, -0.21666667, 0, 0.033333335, 0.0012602806, 1, -0.26583335, 1.1331208, 0, 0),
 "times": PackedFloat32Array(0, 0.3325)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("TextureRect:scale:y")
+tracks/2/path = NodePath("WaveText:scale:y")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(2.74, -0.21666667, 0, 0.033333335, -0.009047031, 1, -0.26583335, 1.1537356, 0, 0),
+"points": PackedFloat32Array(2.5, -0.21666667, 0, 0.033333335, -0.009047031, 1, -0.26583335, 1.1537356, 0, 0),
 "times": PackedFloat32Array(0, 0.3325)
 }
 
@@ -46,29 +46,29 @@ length = 1.1333333
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:scale:x")
+tracks/0/path = NodePath("WaveText:scale:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 2, 2),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.36, -0.09456363, -0.060000002, 0, 0, 2.74, -0.08861398, -0.23000002, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.36, -0.09456363, -0.060000002, 0, 0, 2.5, -0.08861398, -0.23000002, 0, 0),
 "times": PackedFloat32Array(0, 0.5673818, 1.0990657)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("TextureRect:scale:y")
+tracks/1/path = NodePath("WaveText:scale:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 2, 2),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.36, -0.10071513, -0.047243595, 0, 0, 2.74, -0.09906566, -0.512027, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.36, -0.10071513, -0.047243595, 0, 0, 2.5, -0.09906566, -0.512027, 0, 0),
 "times": PackedFloat32Array(0, 0.5673818, 1.0990657)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("TextureRect:position:y")
+tracks/2/path = NodePath("WaveText:position:y")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -82,7 +82,7 @@ length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:scale:x")
+tracks/0/path = NodePath("WaveText:scale:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -93,7 +93,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("TextureRect:scale:y")
+tracks/1/path = NodePath("WaveText:scale:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -104,7 +104,7 @@ tracks/1/keys = {
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("TextureRect:position:y")
+tracks/2/path = NodePath("WaveText:position:y")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -125,7 +125,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:texture:region")
+tracks/0/path = NodePath("WaveText:texture:region")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -142,14 +142,14 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:texture:region")
+tracks/0/path = NodePath("WaveText:texture:region")
 tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.125, 0.25),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Rect2(333, 295, 167, 35), Rect2(333, 333, 170, 35), Rect2(333, 371, 167, 35)]
+"values": [Rect2(333, 295, 117, 35), Rect2(333, 333, 117, 35), Rect2(333, 371, 116, 35)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yhkqx"]
@@ -158,9 +158,195 @@ _data = {
 &"wiggle": SubResource("Animation_ycvhl")
 }
 
+[sub_resource type="Animation" id="Animation_yhkqx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WaveText/NumberText:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(447, 203, 35, 35)]
+}
+
+[sub_resource type="Animation" id="Animation_lfnkv"]
+resource_name = "Wiggle1"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WaveText/NumberText:texture:region")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(447, 203, 35, 35), Rect2(485, 203, 35, 35), Rect2(523, 203, 35, 35)]
+}
+
+[sub_resource type="Animation" id="Animation_35w2d"]
+resource_name = "Wiggle1"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WaveText/NumberText:texture:region")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(447, 241, 35, 35), Rect2(485, 241, 35, 35), Rect2(523, 241, 35, 35)]
+}
+
+[sub_resource type="Animation" id="Animation_sfneb"]
+resource_name = "Wiggle3"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WaveText/NumberText:texture:region")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(452, 279, 35, 35), Rect2(490, 279, 35, 35), Rect2(528, 279, 35, 35)]
+}
+
+[sub_resource type="Animation" id="Animation_a0w1n"]
+resource_name = "Wiggle4"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WaveText/NumberText:texture:region")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(452, 317, 35, 35), Rect2(490, 317, 35, 35), Rect2(528, 317, 35, 35)]
+}
+
+[sub_resource type="Animation" id="Animation_c3tlp"]
+resource_name = "Wiggle5"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WaveText/NumberText:texture:region")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(452, 355, 35, 35), Rect2(490, 355, 35, 35), Rect2(528, 355, 35, 35)]
+}
+
+[sub_resource type="Animation" id="Animation_0wt5y"]
+resource_name = "Wiggle6"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WaveText/NumberText:texture:region")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(452, 393, 35, 35), Rect2(490, 393, 35, 35), Rect2(528, 393, 35, 35)]
+}
+
+[sub_resource type="Animation" id="Animation_qgkr8"]
+resource_name = "Wiggle7"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WaveText/NumberText:texture:region")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(452, 431, 35, 35), Rect2(490, 431, 35, 35), Rect2(528, 431, 35, 35)]
+}
+
+[sub_resource type="Animation" id="Animation_x03bh"]
+resource_name = "Wiggle8"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WaveText/NumberText:texture:region")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(338, 409, 35, 35), Rect2(376, 409, 35, 35), Rect2(414, 409, 35, 35)]
+}
+
+[sub_resource type="Animation" id="Animation_5484i"]
+resource_name = "Wiggle9"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WaveText/NumberText:texture:region")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(338, 447, 35, 35), Rect2(376, 447, 35, 35), Rect2(414, 447, 35, 35)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l71kx"]
+_data = {
+&"RESET": SubResource("Animation_yhkqx"),
+&"Wiggle1": SubResource("Animation_lfnkv"),
+&"Wiggle2": SubResource("Animation_35w2d"),
+&"Wiggle3": SubResource("Animation_sfneb"),
+&"Wiggle4": SubResource("Animation_a0w1n"),
+&"Wiggle5": SubResource("Animation_c3tlp"),
+&"Wiggle6": SubResource("Animation_0wt5y"),
+&"Wiggle7": SubResource("Animation_qgkr8"),
+&"Wiggle8": SubResource("Animation_x03bh"),
+&"Wiggle9": SubResource("Animation_5484i")
+}
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_aa0vk"]
 atlas = ExtResource("3_wlfmm")
 region = Rect2(333, 336, 181, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvxy0"]
+atlas = ExtResource("3_wlfmm")
+region = Rect2(447, 203, 35, 35)
 
 [node name="WaveTitle" type="Control" unique_id=1655160409]
 layout_mode = 3
@@ -178,27 +364,47 @@ libraries/ = SubResource("AnimationLibrary_conbe")
 libraries/ = SubResource("AnimationLibrary_yhkqx")
 autoplay = &"wiggle"
 
+[node name="NumberWiggle" type="AnimationPlayer" parent="." unique_id=1902925962]
+libraries/ = SubResource("AnimationLibrary_l71kx")
+autoplay = &"Wiggle1"
+
 [node name="PauseTime" type="Timer" parent="." unique_id=145880942]
 wait_time = 2.0
 one_shot = true
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=778187379]
+[node name="WaveText" type="TextureRect" parent="." unique_id=778187379]
+z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -80.5
+offset_left = -116.0
 offset_top = -369.0
-offset_right = 80.5
-offset_bottom = -326.99966
+offset_right = 65.0
+offset_bottom = -324.34497
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(81, 21.346779)
+pivot_offset = Vector2(116.28633, 22.382725)
 texture = SubResource("AtlasTexture_aa0vk")
-expand_mode = 1
-stretch_mode = 5
+stretch_mode = 3
+
+[node name="NumberText" type="TextureRect" parent="WaveText" unique_id=261724154]
+z_index = 1
+layout_mode = 0
+offset_left = 159.42586
+offset_top = 2.0
+offset_right = 199.42586
+offset_bottom = 42.0
+texture = SubResource("AtlasTexture_xvxy0")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=846894525]
+visible = false
+layout_mode = 0
+offset_top = -138.0
+offset_right = 480.0
+offset_bottom = 40.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="PauseTime" to="." method="_on_pause_time_timeout"]

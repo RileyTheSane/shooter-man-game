@@ -15,4 +15,22 @@ func _on_pause_time_timeout() -> void:
 	$AnimationPlayer.play("Hide")
 
 func update_wave_num(num):
-	pass
+	match num:
+		1:
+			$NumberWiggle.play("Wiggle1")
+		2:
+			$NumberWiggle.play("Wiggle2")
+		3:
+			$NumberWiggle.play("Wiggle3")
+		4:
+			$NumberWiggle.play("Wiggle4")
+		5:
+			$NumberWiggle.play("Wiggle5")
+		6:
+			$NumberWiggle.play("Wiggle6")
+		7:
+			$NumberWiggle.play("Wiggle7")
+		8:
+			$NumberWiggle.play("Wiggle8")
+		9:
+			$NumberWiggle.play("Wiggle9")
