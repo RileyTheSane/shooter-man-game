@@ -32,6 +32,7 @@ wait_time = 3.0
 one_shot = true
 
 [node name="HUD" parent="." unique_id=153174832 instance=ExtResource("1_0wfyh")]
+unique_name_in_owner = true
 
 [node name="MonochromeFilter" parent="." unique_id=1425572513 instance=ExtResource("4_tefeu")]
 

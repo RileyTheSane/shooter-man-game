@@ -2,6 +2,43 @@
 
 [ext_resource type="PackedScene" uid="uid://drxwebmc8wfgi" path="res://scenes/retry_button.tscn" id="1_ahhtf"]
 [ext_resource type="Script" uid="uid://ba4s1cfuifck1" path="res://scripts/hud.gd" id="1_oo0fn"]
+[ext_resource type="Texture2D" uid="uid://bqpig8q4arf8j" path="res://assets/vingette.png" id="3_5ysmq"]
+[ext_resource type="PackedScene" uid="uid://dfkcx2bjo5xsa" path="res://scenes/health_bar.tscn" id="4_6fi6k"]
+
+[sub_resource type="Animation" id="Animation_5ysmq"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_6fi6k"]
+resource_name = "pulse"
+length = 2.2500000000000004
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.75, -0.25, 0, 0.43333334, 0.049627185, 0.3254902, -0.4666667, -0.0056271255, 0, 0, 0.75, -0.083333254, -0.29719138, 0, 0),
+"times": PackedFloat32Array(0, 1.5, 2.25)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uo2fv"]
+_data = {
+&"RESET": SubResource("Animation_5ysmq"),
+&"pulse": SubResource("Animation_6fi6k")
+}
 
 [node name="HUD" type="CanvasLayer" unique_id=153174832]
 layer = 6
@@ -9,4 +46,27 @@ script = ExtResource("1_oo0fn")
 
 [node name="RetryButton" parent="." unique_id=1111441099 instance=ExtResource("1_ahhtf")]
 
+[node name="Vingette" type="Sprite2D" parent="." unique_id=392621915]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+position = Vector2(498, 245.00002)
+scale = Vector2(1.102, 1.163)
+texture = ExtResource("3_5ysmq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Vingette" unique_id=1342399922]
+libraries/ = SubResource("AnimationLibrary_uo2fv")
+
+[node name="PulseWait" type="Timer" parent="Vingette" unique_id=537066530]
+wait_time = 0.75
+one_shot = true
+
+[node name="HealthBar" parent="." unique_id=316176200 instance=ExtResource("4_6fi6k")]
+offset_left = 120.00002
+offset_top = 21.0
+offset_right = 160.0
+offset_bottom = 61.0
+scale = Vector2(5.475, 5.475)
+
 [connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="animation_finished" from="Vingette/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="Vingette/PulseWait" to="." method="_on_pulse_wait_timeout"]

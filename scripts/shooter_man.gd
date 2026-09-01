@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-@export var health = 40.00
-@export var max_health = 40.00
+@export var health = 150.00
+@export var max_health = 150.00
 const MOVE_SPEED = 160.00
 @export var can_take_damage = true
 var shooting = false
@@ -11,9 +11,14 @@ var can_shoot = true
 var arm_can_rotate = true
 
 var bullet_scene = preload("res://scenes/bullet.tscn")
+var HUD
+var HUDHealthBar
 
 func _ready() -> void:
+	HUD = %HUD
+	HUDHealthBar = HUD.find_child("HealthBar")
 	$HealthBar.hide()
+	HUDHealthBar.quick_hide()
 	
 func _physics_process(delta: float) -> void:
 	if can_move:
@@ -68,11 +73,14 @@ func _on_damage_tick_timeout() -> void:
 	can_take_damage = true
 
 func _on_collision_body_entered(body: Node2D) -> void:
-	if body.is_in_group("gloink") && can_take_damage:
-		$DamageTick.start()
-		health -= body.damage
-		can_take_damage = false
-		$HealthBar.update(max_health, health)
+	if body != null:
+		if body.is_in_group("gloink") && can_take_damage:
+			$DamageTick.start()
+			health -= body.damage
+			can_take_damage = false
+	
+	$HealthBar.update(max_health, health, true)
+	HUDHealthBar.update(max_health, health, false)
 	
 	if health <= 0:
 		can_move = false # stop normal functions
@@ -81,11 +89,13 @@ func _on_collision_body_entered(body: Node2D) -> void:
 		$"../WavePlayer".stop_wave() # stop all of the gloinks
 		$Arm.visible = false # turn rotating arm and health bar invis
 		$HealthBar.hide()
+		HUDHealthBar.slow_hide()
 		$"../Camera2D".play_death_camera_effects() # start the camera effects eg: zoom and greyscale
 		$DeathAnimTimer.start() # start the death animation sequence
 		$Body.flip_h = false
 		$Body.play("deadarms")
 		$Body.offset = Vector2(0, 0)
+		_on_visible_on_screen_notifier_2d_screen_entered() # trick the vingette into hiding
 
 func _on_shoot_cooldown_timeout() -> void:
 	shooting = false
@@ -106,11 +116,9 @@ func updateDeathAnim():
 		3:
 			curDeathAnim = 0
 			$"../HUD/RetryButton".show_button()
-			
 
 func _on_death_anim_timer_timeout() -> void:
 	updateDeathAnim()
-	
 
 func reset():
 	position = Vector2(480, 270)
@@ -119,3 +127,17 @@ func reset():
 	can_shoot = true
 	arm_can_rotate = true
 	$Arm.visible = true
+
+func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
+	HUD.vingette("hide")
+	cur_storm_tick = 4 # reset the storm tick
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	HUD.vingette("show")
+
+var cur_storm_tick = 4
+func do_storm_tick():
+	health -= cur_storm_tick
+	print("strom tick: " + str(cur_storm_tick))
+	cur_storm_tick += 1 # make storm do more damage over time
+	_on_collision_body_entered(null) # trick the function into checking bob's health
