@@ -91,3 +91,8 @@ Added death sprites to bob
 Added a zoom animation for when bob dies
 That all now works together to create a cool little animation
 TODO: fix hexagon offset
+
+Changelong 9/1/2026
+Made vignette a little more transparent
+Fixed vignette animation bug
+Fixed bug where big health bar showed up everytime bob took damage it appeared for a short period of time

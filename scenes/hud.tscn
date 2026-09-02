@@ -22,6 +22,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_6fi6k"]
 resource_name = "pulse"
 length = 2.2500000000000004
+loop_mode = 1
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -30,8 +31,22 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(0.75, -0.25, 0, 0.43333334, 0.049627185, 0.3254902, -0.4666667, -0.0056271255, 0, 0, 0.75, -0.083333254, -0.29719138, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.43333334, 0.049627185, 0.3254902, -0.4666667, -0.0056271255, 0, 0, 1, -0.083333254, -0.29719138, 0, 0),
 "times": PackedFloat32Array(0, 1.5, 2.25)
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.25),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"do_storm_tick"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uo2fv"]

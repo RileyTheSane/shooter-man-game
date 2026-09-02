@@ -57,7 +57,7 @@ func wave1():
 	$WaveTitle.update_wave_num(1)
 	$WaveTitle.play()
 	
-	make_new_gloinks(triangle, 1, 1, 6)
+	make_new_gloinks(triangle, 10, 1, 6)
 		
 func wave2():
 	$WaveTitle.update_wave_num(2)

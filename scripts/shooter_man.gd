@@ -13,6 +13,7 @@ var arm_can_rotate = true
 var bullet_scene = preload("res://scenes/bullet.tscn")
 var HUD
 var HUDHealthBar
+var outsideScreen = false
 
 func _ready() -> void:
 	HUD = %HUD
@@ -80,7 +81,7 @@ func _on_collision_body_entered(body: Node2D) -> void:
 			can_take_damage = false
 	
 	$HealthBar.update(max_health, health, true)
-	HUDHealthBar.update(max_health, health, false)
+	HUDHealthBar.update(max_health, health)
 	
 	if health <= 0:
 		can_move = false # stop normal functions
@@ -127,17 +128,19 @@ func reset():
 	can_shoot = true
 	arm_can_rotate = true
 	$Arm.visible = true
+	HUDHealthBar.update(max_health, health)
 
 func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
 	HUD.vingette("hide")
 	cur_storm_tick = 4 # reset the storm tick
+	outsideScreen = false
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	HUD.vingette("show")
+	outsideScreen = true
 
 var cur_storm_tick = 4
 func do_storm_tick():
 	health -= cur_storm_tick
-	print("strom tick: " + str(cur_storm_tick))
 	cur_storm_tick += 1 # make storm do more damage over time
 	_on_collision_body_entered(null) # trick the function into checking bob's health
