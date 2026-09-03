@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dbx4q3jtc56k8"]
 
-[ext_resource type="Texture2D" uid="uid://qvjf77den8vj" path="res://assets/ShooterManArt.png" id="1_q8oh2"]
+[ext_resource type="Texture2D" uid="uid://b7ucgvbofyu8y" path="res://assets/ShooterManArt.png" id="1_q8oh2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_muf2m"]
 atlas = ExtResource("1_q8oh2")
@@ -26,7 +26,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3j5xu")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 8.0
 }]
@@ -42,3 +42,6 @@ offset = Vector2(-5, 9)
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=927186976]
 position = Vector2(53, -3)
+
+[node name="DirectionMarker" type="Marker2D" parent="." unique_id=1755263968]
+position = Vector2(103.485, -3)

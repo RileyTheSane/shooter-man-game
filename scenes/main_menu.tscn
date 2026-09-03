@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://d3yclevc7huqo"]
+
+[ext_resource type="PackedScene" uid="uid://drxwebmc8wfgi" path="res://scenes/retry_button.tscn" id="1_l6cm7"]
+
+[node name="MainMenu" type="Control" unique_id=1745663]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RetryButton" parent="." unique_id=1111441099 instance=ExtResource("1_l6cm7")]
+layout_mode = 1

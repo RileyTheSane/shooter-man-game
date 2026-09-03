@@ -3,12 +3,12 @@ extends CharacterBody2D
 @export var health = 150.00
 @export var max_health = 150.00
 const MOVE_SPEED = 160.00
-@export var can_take_damage = true
+@export var can_take_damage = false
 var shooting = false
 
-var can_move = true # these varaibles are here to disable any common functions for stuff like cutscenes
-var can_shoot = true
-var arm_can_rotate = true
+var can_move = false # these varaibles are here to disable any common functions for stuff like cutscenes
+var can_shoot = false
+var arm_can_rotate = false
 
 var bullet_scene = preload("res://scenes/bullet.tscn")
 var HUD
@@ -20,7 +20,17 @@ func _ready() -> void:
 	HUDHealthBar = HUD.find_child("HealthBar")
 	$HealthBar.hide()
 	HUDHealthBar.quick_hide()
+	#hide()
+
+# make bob start bobbing
+func init():
+	can_move = true
+	can_shoot = true
+	arm_can_rotate = true
+	can_take_damage = true
+	show()
 	
+
 func _physics_process(delta: float) -> void:
 	if can_move:
 		var direction = Input.get_vector("playerLeft", "playerRight", "playerUp", "playerDown")
@@ -44,7 +54,7 @@ func _physics_process(delta: float) -> void:
 				bullet.position = $Arm/Marker2D.global_position
 				bullet.rotation = $Arm.rotation
 				var dir_offset = randf_range(-1.5, 1.5)
-				bullet.velocity = (get_global_mouse_position() - bullet.position).normalized().rotated(deg_to_rad(dir_offset)) # set the direction to send the bullet in and add offset
+				bullet.velocity = ($Arm/DirectionMarker.global_position - bullet.position).normalized().rotated(deg_to_rad(dir_offset)) # set the direction to send the bullet in and add offset
 				%Projectiles.add_child(bullet)
 
 # change animation based on walking direction. walking up or down takes priority over left and right

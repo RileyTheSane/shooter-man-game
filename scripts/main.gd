@@ -4,7 +4,8 @@ func _ready():
 	start_game()
 
 func start_game():
-	$WavePlayer.start()
+	#$WavePlayer.start()
+	pass
 
 	
 func reset_game():

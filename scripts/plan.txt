@@ -96,3 +96,6 @@ Changelong 9/1/2026
 Made vignette a little more transparent
 Fixed vignette animation bug
 Fixed bug where big health bar showed up everytime bob took damage it appeared for a short period of time
+
+Changelog 9/2/2026
+Fixed bug where bob could shoot himself
