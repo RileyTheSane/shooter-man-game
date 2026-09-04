@@ -1,6 +1,74 @@
 [gd_scene format=3 uid="uid://d3yclevc7huqo"]
 
-[ext_resource type="PackedScene" uid="uid://drxwebmc8wfgi" path="res://scenes/retry_button.tscn" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://b7ucgvbofyu8y" path="res://assets/ShooterManArt.png" id="1_l6cm7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l6cm7"]
+texture = ExtResource("1_l6cm7")
+texture_margin_left = 23.0
+texture_margin_top = 26.0
+texture_margin_right = 68.0
+texture_margin_bottom = 25.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(333, 2, 260, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ekxnf"]
+texture = ExtResource("1_l6cm7")
+texture_margin_left = 23.0
+texture_margin_top = 26.0
+texture_margin_right = 68.0
+texture_margin_bottom = 25.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(333, 2, 260, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bqqt6"]
+texture = ExtResource("1_l6cm7")
+texture_margin_left = 23.0
+texture_margin_top = 26.0
+texture_margin_right = 68.0
+texture_margin_bottom = 25.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(333, 2, 260, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvxy0"]
+atlas = ExtResource("1_l6cm7")
+region = Rect2(596, 141, 73, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wu84c"]
+texture = ExtResource("1_l6cm7")
+texture_margin_left = 23.0
+texture_margin_top = 26.0
+texture_margin_right = 68.0
+texture_margin_bottom = 25.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(333, 2, 260, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ln24"]
+texture = ExtResource("1_l6cm7")
+texture_margin_left = 23.0
+texture_margin_top = 26.0
+texture_margin_right = 68.0
+texture_margin_bottom = 25.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(333, 2, 260, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rtw2f"]
+texture = ExtResource("1_l6cm7")
+texture_margin_left = 23.0
+texture_margin_top = 26.0
+texture_margin_right = 68.0
+texture_margin_bottom = 25.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(333, 2, 260, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa1go"]
+atlas = ExtResource("1_l6cm7")
+region = Rect2(596, 176, 250, 28)
 
 [node name="MainMenu" type="Control" unique_id=1745663]
 layout_mode = 3
@@ -10,5 +78,42 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RetryButton" parent="." unique_id=1111441099 instance=ExtResource("1_l6cm7")]
-layout_mode = 1
+[node name="RetryButton" type="Button" parent="." unique_id=495177961]
+layout_mode = 0
+offset_left = 219.0
+offset_top = 186.0
+offset_right = 357.0
+offset_bottom = 255.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_l6cm7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ekxnf")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bqqt6")
+
+[node name="TextureRect" type="TextureRect" parent="RetryButton" unique_id=1022249695]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 114.0
+offset_bottom = 53.0
+texture = SubResource("AtlasTexture_xvxy0")
+stretch_mode = 3
+
+[node name="StardanceButton" type="Button" parent="." unique_id=1116125517]
+layout_mode = 0
+offset_left = 154.0
+offset_top = 337.0
+offset_right = 450.0
+offset_bottom = 402.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_wu84c")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8ln24")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rtw2f")
+
+[node name="TextureRect" type="TextureRect" parent="StardanceButton" unique_id=1469463007]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 14.0
+offset_right = 269.0
+offset_bottom = 51.0
+texture = SubResource("AtlasTexture_oa1go")
+stretch_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1095914981]
