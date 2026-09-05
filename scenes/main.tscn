@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ddp100v4wj88o" path="res://scenes/shooter_man.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://7p45f0cuh356" path="res://scripts/camera_2d.gd" id="2_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cdjiovqnytrqa" path="res://scenes/monochrome_filter.tscn" id="4_tefeu"]
+[ext_resource type="PackedScene" uid="uid://d3yclevc7huqo" path="res://scenes/main_menu.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://bk5kpmb1ok4tn" path="res://scenes/wave_player.tscn" id="9_85g3d"]
 
 [node name="Main" type="Node2D" unique_id=78608440]
@@ -14,10 +15,8 @@ script = ExtResource("1_jyhfs")
 layer = -1
 
 [node name="ColorRect" type="ColorRect" parent="Background" unique_id=2064265203]
-offset_left = -480.0
-offset_top = -270.0
-offset_right = 1440.0
-offset_bottom = 810.0
+offset_right = 960.0
+offset_bottom = 540.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=791576995]
 position = Vector2(480, 270)
@@ -29,6 +28,10 @@ one_shot = true
 
 [node name="ResetTimer" type="Timer" parent="." unique_id=273899577]
 wait_time = 3.0
+one_shot = true
+
+[node name="CutsceneTimer" type="Timer" parent="." unique_id=630339405]
+wait_time = 1.25
 one_shot = true
 
 [node name="HUD" parent="." unique_id=153174832 instance=ExtResource("1_0wfyh")]
@@ -54,11 +57,15 @@ position = Vector2(480, 270)
 
 [node name="TransitionCover" type="ColorRect" parent="." unique_id=1004791449]
 z_index = 1
-offset_left = -480.0
-offset_top = -270.0
-offset_right = 1440.0
-offset_bottom = 810.0
+offset_left = -500.0
+offset_top = -266.0
+offset_right = 1420.0
+offset_bottom = 814.0
 color = Color(1, 1, 1, 0)
+
+[node name="MainMenu" parent="." unique_id=1745663 instance=ExtResource("7_o6xl0")]
+visible = false
 
 [connection signal="timeout" from="Camera2D/ZoomPause" to="Camera2D" method="_on_zoom_pause_timeout"]
 [connection signal="timeout" from="ResetTimer" to="." method="_on_reset_timer_timeout"]
+[connection signal="timeout" from="CutsceneTimer" to="." method="_on_cutscene_timer_timeout"]

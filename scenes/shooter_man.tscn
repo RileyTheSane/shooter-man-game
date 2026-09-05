@@ -219,6 +219,7 @@ script = ExtResource("1_1y536")
 position = Vector2(-6, 0)
 sprite_frames = SubResource("SpriteFrames_s0wgv")
 animation = &"idle"
+autoplay = "idle"
 
 [node name="Arm" parent="." unique_id=1917099730 instance=ExtResource("3_bsdys")]
 

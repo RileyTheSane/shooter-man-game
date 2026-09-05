@@ -1,0 +1,274 @@
+[gd_scene format=3 uid="uid://d3yclevc7huqo"]
+
+[ext_resource type="Script" uid="uid://3ml821j4vpnx" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://b7ucgvbofyu8y" path="res://assets/ShooterManArt.png" id="1_l6cm7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l6cm7"]
+texture = ExtResource("1_l6cm7")
+texture_margin_left = 23.0
+texture_margin_top = 26.0
+texture_margin_right = 40.0
+texture_margin_bottom = 25.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(333, 2, 260, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ekxnf"]
+texture = ExtResource("1_l6cm7")
+texture_margin_left = 23.0
+texture_margin_top = 26.0
+texture_margin_right = 68.0
+texture_margin_bottom = 25.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(333, 2, 260, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bqqt6"]
+texture = ExtResource("1_l6cm7")
+texture_margin_left = 23.0
+texture_margin_top = 26.0
+texture_margin_right = 68.0
+texture_margin_bottom = 25.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(333, 2, 260, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvxy0"]
+atlas = ExtResource("1_l6cm7")
+region = Rect2(596, 141, 73, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wu84c"]
+texture = ExtResource("1_l6cm7")
+texture_margin_left = 23.0
+texture_margin_top = 26.0
+texture_margin_right = 68.0
+texture_margin_bottom = 25.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(333, 2, 260, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ln24"]
+texture = ExtResource("1_l6cm7")
+texture_margin_left = 23.0
+texture_margin_top = 26.0
+texture_margin_right = 68.0
+texture_margin_bottom = 25.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(333, 2, 260, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rtw2f"]
+texture = ExtResource("1_l6cm7")
+texture_margin_left = 23.0
+texture_margin_top = 26.0
+texture_margin_right = 68.0
+texture_margin_bottom = 25.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(333, 2, 260, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa1go"]
+atlas = ExtResource("1_l6cm7")
+region = Rect2(596, 176, 250, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dq1g"]
+atlas = ExtResource("1_l6cm7")
+region = Rect2(596, 1, 389, 43)
+
+[sub_resource type="Animation" id="Animation_ekxnf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Play:theme_override_styles/normal:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(333, 2, 260, 64)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StardanceButton:theme_override_styles/normal:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(333, 2, 260, 64)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Play/TextureRect:texture:region")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(596, 141, 73, 32)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StardanceButton/TextureRect:texture:region")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(596, 176, 250, 28)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Title:texture:region")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(596, 1, 389, 43)]
+}
+
+[sub_resource type="Animation" id="Animation_l6cm7"]
+resource_name = "Wiggle"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Play:theme_override_styles/normal:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(333, 69, 260, 64), Rect2(333, 136, 260, 64), Rect2(333, 2, 260, 64)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StardanceButton:theme_override_styles/normal:region_rect")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(333, 2, 260, 64), Rect2(333, 69, 260, 64), Rect2(333, 136, 260, 64)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Play/TextureRect:texture:region")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(596, 141, 73, 32), Rect2(672, 141, 73, 32), Rect2(748, 141, 73, 32)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StardanceButton/TextureRect:texture:region")
+tracks/3/interp = 0
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(596, 176, 250, 28), Rect2(596, 207, 247, 28), Rect2(596, 238, 253, 30)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Title:texture:region")
+tracks/4/interp = 0
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(596, 1, 389, 43), Rect2(596, 47, 389, 46), Rect2(596, 96, 389, 42)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ekxnf"]
+_data = {
+&"RESET": SubResource("Animation_ekxnf"),
+&"Wiggle": SubResource("Animation_l6cm7")
+}
+
+[node name="MainMenu" type="Control" unique_id=1745663]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ekxnf")
+
+[node name="Play" type="Button" parent="." unique_id=495177961]
+layout_mode = 0
+offset_left = 232.00002
+offset_top = 255.0
+offset_right = 364.0
+offset_bottom = 320.0
+scale = Vector2(1.265, 1.265)
+theme_override_styles/normal = SubResource("StyleBoxTexture_l6cm7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ekxnf")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bqqt6")
+
+[node name="TextureRect" type="TextureRect" parent="Play" unique_id=1022249695]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 15.0
+offset_right = 108.0
+offset_bottom = 52.0
+texture = SubResource("AtlasTexture_xvxy0")
+stretch_mode = 3
+
+[node name="StardanceButton" type="Button" parent="." unique_id=1116125517]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 365.0
+offset_right = 481.0
+offset_bottom = 430.0
+scale = Vector2(0.91, 0.91)
+theme_override_styles/normal = SubResource("StyleBoxTexture_wu84c")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8ln24")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rtw2f")
+
+[node name="TextureRect" type="TextureRect" parent="StardanceButton" unique_id=1469463007]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 14.0
+offset_right = 269.0
+offset_bottom = 51.0
+texture = SubResource("AtlasTexture_oa1go")
+stretch_mode = 3
+
+[node name="Title" type="TextureRect" parent="." unique_id=753761885]
+layout_mode = 0
+offset_top = 14.0
+offset_right = 435.0
+offset_bottom = 89.0
+scale = Vector2(2.205, 2.205)
+texture = SubResource("AtlasTexture_0dq1g")
+stretch_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1095914981]
+libraries/ = SubResource("AnimationLibrary_ekxnf")
+autoplay = &"Wiggle"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

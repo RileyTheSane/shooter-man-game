@@ -1,6 +1,8 @@
 extends Node2D
 
 func _ready():
+	$MainMenu.show()
+	$ShooterMan.mainMenuState()
 	start_game()
 
 func start_game():
@@ -15,6 +17,12 @@ func reset_game():
 	
 	$ResetTimer.start() # clear all of the gloinks, projs, and effects, move camera back to normal pos, remove monochrome filter, make white rect transparent again
 
+func startCutscene():
+	var transparencyTween = create_tween() # make a tween that covers the screen with white
+	transparencyTween.tween_property($TransitionCover, "color", Color(1, 1, 1, 1), 1.25)\
+		.set_trans(Tween.TRANS_LINEAR)
+	
+	$CutsceneTimer.start()
 
 func _on_reset_timer_timeout() -> void:
 	# clear all gloinks, projectiles, and particles
@@ -41,3 +49,8 @@ func _on_reset_timer_timeout() -> void:
 	$WavePlayer.reset() # reset the wave num
 	
 	$MonochromeFilter/ColorRect.color = Color(1, 1, 1, 0) # remove grayscale
+
+
+func _on_cutscene_timer_timeout() -> void:
+	$MainMenu.hide()
+	$ShooterMan.nonexistentState()

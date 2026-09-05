@@ -20,16 +20,7 @@ func _ready() -> void:
 	HUDHealthBar = HUD.find_child("HealthBar")
 	$HealthBar.hide()
 	HUDHealthBar.quick_hide()
-	#hide()
-
-# make bob start bobbing
-func init():
-	can_move = true
-	can_shoot = true
-	arm_can_rotate = true
-	can_take_damage = true
-	show()
-	
+	hide()
 
 func _physics_process(delta: float) -> void:
 	if can_move:
@@ -42,8 +33,10 @@ func _physics_process(delta: float) -> void:
 		var angle = abs(int($Arm.rotation_degrees) % 360)
 		if angle > 90 && angle < 270: # flip the arm if it's on the left side of the player
 			$Arm/AnimatedSprite2D.flip_v = true
+			$Arm.flippedMarkerPos()
 		else:
 			$Arm/AnimatedSprite2D.flip_v = false
+			$Arm.normalMarkerPos()
 		
 	if can_shoot:
 		if Input.is_action_just_pressed("shoot"):
@@ -154,3 +147,31 @@ func do_storm_tick():
 	health -= cur_storm_tick
 	cur_storm_tick += 1 # make storm do more damage over time
 	_on_collision_body_entered(null) # trick the function into checking bob's health
+
+# put bob big and on the right of the main menu
+func mainMenuState():
+	scale = Vector2(3.43, 3.43)
+	position = Vector2(722.0, 332.0)
+	show()
+	can_move = false
+	can_shoot = true
+	arm_can_rotate = true
+	can_take_damage = false
+
+# make bob not paralyzed and put him in the middle of the screen
+func playState():
+	scale = Vector2(1, 1)
+	position = Vector2(480, 270)
+	can_move = true
+	can_shoot = true
+	arm_can_rotate = true
+	can_take_damage = true
+	show()
+
+# make bob nonexistant
+func nonexistentState():
+	can_move = false
+	can_shoot = false
+	arm_can_rotate = false
+	can_take_damage = false
+	hide()

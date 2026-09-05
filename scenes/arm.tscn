@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dbx4q3jtc56k8"]
 
+[ext_resource type="Script" uid="uid://lspa3n6klu6" path="res://scripts/arm.gd" id="1_muf2m"]
 [ext_resource type="Texture2D" uid="uid://b7ucgvbofyu8y" path="res://assets/ShooterManArt.png" id="1_q8oh2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_muf2m"]
@@ -32,9 +33,10 @@ animations = [{
 }]
 
 [node name="Arm" type="Node2D" unique_id=1917099730]
+script = ExtResource("1_muf2m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1464104876]
-position = Vector2(28, -9)
+position = Vector2(27, -9)
 sprite_frames = SubResource("SpriteFrames_k0nq1")
 autoplay = "default"
 frame_progress = 0.85709614
@@ -44,4 +46,4 @@ offset = Vector2(-5, 9)
 position = Vector2(53, -3)
 
 [node name="DirectionMarker" type="Marker2D" parent="." unique_id=1755263968]
-position = Vector2(103.485, -3)
+position = Vector2(103, -3)
