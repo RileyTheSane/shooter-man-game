@@ -22,6 +22,10 @@ func startCutscene():
 	transparencyTween.tween_property($TransitionCover, "color", Color(1, 1, 1, 1), 1.25)\
 		.set_trans(Tween.TRANS_LINEAR)
 	
+	var mainMenuTween = create_tween() # hide the main menu buttons and title
+	mainMenuTween.tween_property($MainMenu/Control, "modulate", Color(1, 1, 1, 0), 1.25)\
+		.set_trans(Tween.TRANS_LINEAR)
+	
 	$CutsceneTimer.start()
 
 func _on_reset_timer_timeout() -> void:

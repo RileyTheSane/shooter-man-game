@@ -11,6 +11,8 @@
 [node name="Main" type="Node2D" unique_id=78608440]
 script = ExtResource("1_jyhfs")
 
+[node name="MainMenu" parent="." unique_id=413313003 instance=ExtResource("7_o6xl0")]
+
 [node name="Background" type="CanvasLayer" parent="." unique_id=600377220]
 layer = -1
 
@@ -62,9 +64,6 @@ offset_top = -266.0
 offset_right = 1420.0
 offset_bottom = 814.0
 color = Color(1, 1, 1, 0)
-
-[node name="MainMenu" parent="." unique_id=1745663 instance=ExtResource("7_o6xl0")]
-visible = false
 
 [connection signal="timeout" from="Camera2D/ZoomPause" to="Camera2D" method="_on_zoom_pause_timeout"]
 [connection signal="timeout" from="ResetTimer" to="." method="_on_reset_timer_timeout"]

@@ -81,6 +81,7 @@ offset_top = 21.0
 offset_right = 160.0
 offset_bottom = 61.0
 scale = Vector2(5.475, 5.475)
+mouse_filter = 1
 
 [connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="animation_finished" from="Vingette/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

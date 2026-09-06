@@ -20,7 +20,7 @@ func _ready() -> void:
 	HUDHealthBar = HUD.find_child("HealthBar")
 	$HealthBar.hide()
 	HUDHealthBar.quick_hide()
-	hide()
+	modulate = Color(1, 1, 1, 0.01) # hide bob but not so much that it triggers leaving the screen
 
 func _physics_process(delta: float) -> void:
 	if can_move:
@@ -152,7 +152,7 @@ func do_storm_tick():
 func mainMenuState():
 	scale = Vector2(3.43, 3.43)
 	position = Vector2(722.0, 332.0)
-	show()
+	modulate = Color(1, 1, 1, 1)
 	can_move = false
 	can_shoot = true
 	arm_can_rotate = true
@@ -166,7 +166,7 @@ func playState():
 	can_shoot = true
 	arm_can_rotate = true
 	can_take_damage = true
-	show()
+	modulate = Color(1, 1, 1, 1)
 
 # make bob nonexistant
 func nonexistentState():
@@ -174,4 +174,5 @@ func nonexistentState():
 	can_shoot = false
 	arm_can_rotate = false
 	can_take_damage = false
-	hide()
+	modulate = Color(1, 1, 1, 0.01) # hide bob but not so much that it triggers leaving the screen
+	position = Vector2(480, 270)

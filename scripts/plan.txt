@@ -102,3 +102,6 @@ Fixed bug where bob could shoot himself
 
 Changelog 9/4/2026
 Worked on main screen
+
+Changelog 9/5/2026
+Made main screen functional
