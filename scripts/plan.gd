@@ -1,3 +1,4 @@
+"""
 Emenies:
 	Triangle:
 		Color: Yellow
@@ -45,7 +46,7 @@ Game Plan (in order):
 				A wide shot of his house covered in gloinks is shown
 			"It still hurts to think about that day" as the wide shot starts to fade. Another pause
 			before a gloink smashes through the window and bob says a tired "Awww c'mon". More gloinks
-			smash through the window pushing him out of the door.
+			smash through the window pushing him out of the door
 	
 	Tutorial:
 		The scene cuts to a top view of the map with bob's house on the left. Bob is thrown out the
@@ -55,6 +56,34 @@ Game Plan (in order):
 		the right to start the game. The gloinks disappear when bob rolls and the text "Wave 1" appears.
 		
 		
+
+
+
+
+
+Script For Amination:
+[bob (bob's name is never capitalized) is sitting at his desk inside of his 2d house clacking
+away at his keyboard.]
+
+Narrator:
+This is bob, and this is bob's studio apartment. It's not much, but it's "cozy".
+He moved here after the Gloinks infested his childhood home.
+
+[Flashback starts]
+[bob is at the table eating a bowl of cereal, his mom is by the counter drinking coffee,
+and his dad is by the window smoking. A gloink smashes through the window sending his
+dad to the ground. The gloink lands on top of his dad. There is an akward silence before
+the mom yells a blood curling scream and the gloink starts jumping on the dad like in
+tadc. A wide shot of his house covered in gloinks is shown]
+
+Narrator:
+It still hurts for bob to think about that day.
+[The wide shot of the infested childhood home fades]
+[bob's apartment fades in]
+[bob is still clacking away on his keyboard]
+
+[a gloink smashes through the window and bob makes an audible  "awwww"]
+[more gloinks smash through the window and push him out]
 
 Waves:
 	1:
@@ -105,3 +134,5 @@ Worked on main screen
 
 Changelog 9/5/2026
 Made main screen functional
+
+"""
