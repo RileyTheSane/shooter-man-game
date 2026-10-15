@@ -1,42 +1,42 @@
 """
-Emenies:
-	Triangle:
-		Color: Yellow
-		Description: Slow, small damage, melee
+Emenies;
+	Triangle;
+		Color; Yellow
+		Description; Slow, small damage, melee
 
-	Square:
-		Color: Blue
-		Description: Slightly faster than Triangle, uses roll attack
+	Square;
+		Color; Blue
+		Description; Slightly faster than Triangle, uses roll attack
 
-	Pentagon:
-		Color: Orange
-		Description: Shoots mini pentagons that don't go far
+	Pentagon;
+		Color; Orange
+		Description; Shoots mini pentagons that don't go far
 	
-	Hexagon:
-		Color: Darker Orange
-		Description: Fly across the screen and does mid damage
+	Hexagon;
+		Color; Darker Orange
+		Description; Fly across the screen and does mid damage
 	
-	Heptagon:
-		Color: Purple
-		Description: Digs under the map and pops out near the player, does little damage
+	Heptagon;
+		Color; Purple
+		Description; Digs under the map and pops out near the player, does little damage
 
-	Octagon:
-		Color: Red
-		Description: Shoots mini octagons that do go further than the pentagon and explode into a few more octagons
+	Octagon;
+		Color; Red
+		Description; Shoots mini octagons that do go further than the pentagon and explode into a few more octagons
 		
 		
 
-Game Plan (in order):
-	Homescreen:
+Game Plan (in order);
+	Homescreen;
 		Handrawn like usual, game title, play button, made by, link to stardance profile
 	
-	Intro:
+	Intro;
 		bob (bob's name is never capitalized) is sitting at his desk inside of his 2d house clacking
 		away at his keyboard. The narrator starts yapping about his life story, it'll probably be
-		something like this:
+		something like this;
 			"This is bob, and this is bob's studio apartment. It's not much, but it's, "cozy" he says.
 			He moved here after the Gloinks infested his childhood home"
-			Flashback:
+			Flashback;
 				bob is at the table eating a bowl of cereal, his mom is by the counter drinking coffee,
 				and his dad is by the window smoking. A gloink smashes through the window sending his
 				dad to the ground. The gloink lands on top of his dad. There is an akward silence before
@@ -48,7 +48,7 @@ Game Plan (in order):
 			before a gloink smashes through the window and bob says a tired "Awww c'mon". More gloinks
 			smash through the window pushing him out of the door
 	
-	Tutorial:
+	Tutorial;
 		The scene cuts to a top view of the map with bob's house on the left. Bob is thrown out the
 		door by a bunch of gloinks that are now partially surrounding him. The narrator explains that
 		you can aim with your mouse and shoot with left click. Then the narrator tells you to roll by
@@ -61,22 +61,22 @@ Game Plan (in order):
 
 
 
-Script For Amination:
+Script For Amination;
 [bob (bob's name is never capitalized) is sitting at his desk inside of his 2d house clacking
 away at his keyboard.]
 
-Narrator:
+Narrator;
 This is bob, and this is bob's studio apartment. It's not much, but it's "cozy".
 He moved here after the Gloinks infested his childhood home.
 
 [Flashback starts]
 [bob is at the table eating a bowl of cereal, his mom is by the counter drinking coffee,
-and his dad is by the window smoking. A gloink smashes through the window sending his
+and his dad is by the window. A gloink smashes through the window sending his
 dad to the ground. The gloink lands on top of his dad. There is an akward silence before
 the mom yells a blood curling scream and the gloink starts jumping on the dad like in
 tadc. A wide shot of his house covered in gloinks is shown]
 
-Narrator:
+Narrator;
 It still hurts for bob to think about that day.
 [The wide shot of the infested childhood home fades]
 [bob's apartment fades in]
@@ -85,24 +85,44 @@ It still hurts for bob to think about that day.
 [a gloink smashes through the window and bob makes an audible  "awwww"]
 [more gloinks smash through the window and push him out]
 
-Waves:
-	1:
+Animation Fram Descriptions;
+0 - 2 bob clacking away at his computer
+3 - 5 family chilling in the kitchen
+6 - 8 orange gloink smashing through the window
+9 - 11 dad angry on the ground
+12 - 14 mom surprised
+15 - 17 mom screaming
+18 - 23 gloink dancing and dad surprised
+24 house covered in gloinks
+25 - 27 gloink smashes through studio apartment window
+28 - 30 bob contemplating his life choices after the gloink smashes through the window
+31 - 33 bob groaning
+
+SFX;
+bob clacking-
+Scream-
+Collisions-
+Glass break-
+bob sigh
+
+Waves;
+	1;
 		Traingles
-	2:
+	2;
 		Triangles + like 2 squares
-	3: 
+	3;
 		Squares & Triangles + a few pentagons
-	4:
+	4;
 		More squares and triangles + more pentagons
-	5:
+	5;
 		Squares and Pentagons + a few hexagons
-	6:
+	6;
 		Pentagons + hexagons
-	7:
+	7;
 		Pentagons + heptagons + a few hexagons
-	8:
+	8;
 		Octagons + pentagons + a few hexagons
-	9:
+	9;
 		Everybody yay
 
 

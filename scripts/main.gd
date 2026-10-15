@@ -58,3 +58,8 @@ func _on_reset_timer_timeout() -> void:
 func _on_cutscene_timer_timeout() -> void:
 	$MainMenu.hide()
 	$ShooterMan.nonexistentState()
+	$BackstoryAnimation.start()
+	
+	var transparencyTween = create_tween() # make a tween that covers the screen with white
+	transparencyTween.tween_property($TransitionCover, "color", Color(1, 1, 1, 0), 1.25)\
+		.set_trans(Tween.TRANS_LINEAR)

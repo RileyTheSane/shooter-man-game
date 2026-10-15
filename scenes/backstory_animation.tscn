@@ -1,0 +1,500 @@
+[gd_scene format=3 uid="uid://dfga88no1jgfu"]
+
+[ext_resource type="Script" uid="uid://boi0h453fmkyq" path="res://scripts/backstory_animation.gd" id="1_gs2xv"]
+[ext_resource type="Texture2D" uid="uid://36higqla75i3" path="res://assets/BackstoryAnimationFrames/frame0000.png" id="2_gfd7l"]
+[ext_resource type="Texture2D" uid="uid://dnl752cgjrqjq" path="res://assets/BackstoryAnimationFrames/frame0031.png" id="3_oln7i"]
+[ext_resource type="Texture2D" uid="uid://3vdb2ks1a3ad" path="res://assets/BackstoryAnimationFrames/frame0032.png" id="4_7rii0"]
+[ext_resource type="Texture2D" uid="uid://d4e3b3ne7tmxu" path="res://assets/BackstoryAnimationFrames/frame0033.png" id="5_rgrd1"]
+[ext_resource type="Texture2D" uid="uid://cr74rdlqk16n5" path="res://assets/BackstoryAnimationFrames/frame0028.png" id="6_wxmvs"]
+[ext_resource type="Texture2D" uid="uid://jk7pyojrpbym" path="res://assets/BackstoryAnimationFrames/frame0029.png" id="7_hp2r6"]
+[ext_resource type="Texture2D" uid="uid://chnrgrr1uengx" path="res://assets/BackstoryAnimationFrames/frame0030.png" id="8_ne0cw"]
+[ext_resource type="Texture2D" uid="uid://bktwl0s2fis7o" path="res://assets/BackstoryAnimationFrames/frame0001.png" id="9_tiai6"]
+[ext_resource type="Texture2D" uid="uid://cxdwoc2hv2605" path="res://assets/BackstoryAnimationFrames/frame0002.png" id="10_o38iw"]
+[ext_resource type="Texture2D" uid="uid://bqrxypp2tte4y" path="res://assets/BackstoryAnimationFrames/frame0009.png" id="11_t1f6e"]
+[ext_resource type="Texture2D" uid="uid://bxm5u88j5p6qd" path="res://assets/BackstoryAnimationFrames/frame0010.png" id="12_173wa"]
+[ext_resource type="Texture2D" uid="uid://cibduj3aqnvnh" path="res://assets/BackstoryAnimationFrames/frame0011.png" id="13_plnoa"]
+[ext_resource type="Texture2D" uid="uid://4u625ttierl" path="res://assets/BackstoryAnimationFrames/frame0003.png" id="14_siv80"]
+[ext_resource type="Texture2D" uid="uid://dki0aac7hjrvg" path="res://assets/BackstoryAnimationFrames/frame0004.png" id="15_rjkp5"]
+[ext_resource type="Texture2D" uid="uid://u0c6w21tli81" path="res://assets/BackstoryAnimationFrames/frame0005.png" id="16_e68k1"]
+[ext_resource type="Texture2D" uid="uid://gw4myy10qij5" path="res://assets/BackstoryAnimationFrames/frame0018.png" id="17_3kd26"]
+[ext_resource type="Texture2D" uid="uid://cgly75lt7lxx2" path="res://assets/BackstoryAnimationFrames/frame0019.png" id="18_qebfi"]
+[ext_resource type="Texture2D" uid="uid://wxxi8b0p6teq" path="res://assets/BackstoryAnimationFrames/frame0020.png" id="19_uudpc"]
+[ext_resource type="Texture2D" uid="uid://cv3fmflxi7fxi" path="res://assets/BackstoryAnimationFrames/frame0021.png" id="20_qw8kx"]
+[ext_resource type="Texture2D" uid="uid://bj1tot8dyh4v6" path="res://assets/BackstoryAnimationFrames/frame0022.png" id="21_02xrn"]
+[ext_resource type="Texture2D" uid="uid://bqk5gpgwqf0d4" path="res://assets/BackstoryAnimationFrames/frame0023.png" id="22_otq45"]
+[ext_resource type="Texture2D" uid="uid://453t282kqo6w" path="res://assets/BackstoryAnimationFrames/frame0025.png" id="23_nloan"]
+[ext_resource type="Texture2D" uid="uid://2ulq7s2k5s5e" path="res://assets/BackstoryAnimationFrames/frame0026.png" id="24_e83wf"]
+[ext_resource type="Texture2D" uid="uid://bhe77hwwqnlrm" path="res://assets/BackstoryAnimationFrames/frame0027.png" id="25_oxw5u"]
+[ext_resource type="Texture2D" uid="uid://ctpfcjuqyjdph" path="res://assets/BackstoryAnimationFrames/frame0006.png" id="26_lnb7e"]
+[ext_resource type="Texture2D" uid="uid://jrnbpgtdfv1w" path="res://assets/BackstoryAnimationFrames/frame0007.png" id="27_n5l37"]
+[ext_resource type="Texture2D" uid="uid://barf8p6puwc0l" path="res://assets/BackstoryAnimationFrames/frame0008.png" id="28_wm5jr"]
+[ext_resource type="Texture2D" uid="uid://djsh0nwmi27dg" path="res://assets/BackstoryAnimationFrames/frame0024.png" id="29_je2o7"]
+[ext_resource type="Texture2D" uid="uid://bxq0rx7x2w40m" path="res://assets/BackstoryAnimationFrames/frame0015.png" id="30_0wn6u"]
+[ext_resource type="Texture2D" uid="uid://dia3j36ec1xwr" path="res://assets/BackstoryAnimationFrames/frame0016.png" id="31_axcyn"]
+[ext_resource type="Texture2D" uid="uid://bv8u10r7nkopt" path="res://assets/BackstoryAnimationFrames/frame0017.png" id="32_bkkh7"]
+[ext_resource type="Texture2D" uid="uid://cvn57ueb7mmxs" path="res://assets/BackstoryAnimationFrames/frame0012.png" id="33_gr2hi"]
+[ext_resource type="Texture2D" uid="uid://vydtcqkkcykg" path="res://assets/BackstoryAnimationFrames/frame0013.png" id="34_pdvnu"]
+[ext_resource type="Texture2D" uid="uid://b1fcfo7ka4qug" path="res://assets/BackstoryAnimationFrames/frame0014.png" id="35_aoyvg"]
+[ext_resource type="AudioStream" uid="uid://djsk5aj8k6ru8" path="res://assets/sfx/Groan.mp3" id="36_hp2r6"]
+[ext_resource type="AudioStream" uid="uid://hhuy8cg8oih2" path="res://assets/sfx/Collisions.mp3" id="37_ne0cw"]
+[ext_resource type="AudioStream" uid="uid://blmx0b81ge2dd" path="res://assets/sfx/ItStillHurtsLine.mp3" id="38_tiai6"]
+[ext_resource type="AudioStream" uid="uid://cnq1u4dg7s8pb" path="res://assets/sfx/KeyboardClacking.mp3" id="39_o38iw"]
+[ext_resource type="AudioStream" uid="uid://bgfslimox6hps" path="res://assets/sfx/ThisIsLine.mp3" id="39_rgrd1"]
+[ext_resource type="AudioStream" uid="uid://ce6dbjpoiyvtx" path="res://assets/sfx/Scream.mp3" id="41_tiai6"]
+[ext_resource type="AudioStream" uid="uid://brfaqcqvhukuq" path="res://assets/sfx/GlassShattering.mp3" id="42_o38iw"]
+
+[sub_resource type="Animation" id="Animation_18ayu"]
+resource_name = "BobGroans"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_oln7i"), ExtResource("4_7rii0"), ExtResource("5_rgrd1")]
+}
+
+[sub_resource type="Animation" id="Animation_mjupo"]
+resource_name = "BobPauses"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_wxmvs"), ExtResource("7_hp2r6"), ExtResource("8_ne0cw")]
+}
+
+[sub_resource type="Animation" id="Animation_is42t"]
+resource_name = "Main"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_gfd7l"), ExtResource("9_tiai6"), ExtResource("10_o38iw"), ExtResource("9_tiai6")]
+}
+
+[sub_resource type="Animation" id="Animation_klcnm"]
+resource_name = "DadAngry"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("11_t1f6e"), ExtResource("12_173wa"), ExtResource("13_plnoa")]
+}
+
+[sub_resource type="Animation" id="Animation_obsd2"]
+resource_name = "FamChilling"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("14_siv80"), ExtResource("15_rjkp5"), ExtResource("16_e68k1")]
+}
+
+[sub_resource type="Animation" id="Animation_8yswl"]
+resource_name = "GloinkDancing"
+length = 0.75
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("18_qebfi"), ExtResource("19_uudpc"), ExtResource("20_qw8kx"), ExtResource("21_02xrn"), ExtResource("22_otq45"), ExtResource("17_3kd26")]
+}
+
+[sub_resource type="Animation" id="Animation_2ir5x"]
+resource_name = "GloinkFlyingApartment"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("23_nloan"), ExtResource("24_e83wf"), ExtResource("25_oxw5u")]
+}
+
+[sub_resource type="Animation" id="Animation_nt1sl"]
+resource_name = "GloinkFlying"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("26_lnb7e"), ExtResource("27_n5l37"), ExtResource("28_wm5jr")]
+}
+
+[sub_resource type="Animation" id="Animation_i4ng7"]
+resource_name = "HouseCovered"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("29_je2o7")]
+}
+
+[sub_resource type="Animation" id="Animation_8wcfg"]
+resource_name = "MomScreaming"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("30_0wn6u"), ExtResource("31_axcyn"), ExtResource("32_bkkh7")]
+}
+
+[sub_resource type="Animation" id="Animation_r31q0"]
+resource_name = "MomSurprised"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("33_gr2hi"), ExtResource("34_pdvnu"), ExtResource("35_aoyvg")]
+}
+
+[sub_resource type="Animation" id="Animation_f6m82"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_gfd7l")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k12h1"]
+_data = {
+&"BobGroans": SubResource("Animation_18ayu"),
+&"BobPauses": SubResource("Animation_mjupo"),
+&"ClackingAnim": SubResource("Animation_is42t"),
+&"DadAngry": SubResource("Animation_klcnm"),
+&"FamChilling": SubResource("Animation_obsd2"),
+&"GloinkDancing": SubResource("Animation_8yswl"),
+&"GloinkFlyingApartment": SubResource("Animation_2ir5x"),
+&"GloinkFlyingHouse": SubResource("Animation_nt1sl"),
+&"HouseCovered": SubResource("Animation_i4ng7"),
+&"MomScreaming": SubResource("Animation_8wcfg"),
+&"MomSurprised": SubResource("Animation_r31q0"),
+&"RESET": SubResource("Animation_f6m82")
+}
+
+[sub_resource type="Animation" id="Animation_pqjft"]
+resource_name = "Main"
+length = 67.86500000000001
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 13.066667, 14.316668, 16.6, 16.975, 17.3, 19.5, 20.5083, 20.6, 21.7583, 27.508337, 28.758337, 31.758335, 32.133335, 34.633335),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"show"
+}, {
+"args": [],
+"method": &"playClackingAnim"
+}, {
+"args": [],
+"method": &"fadeInAndOut"
+}, {
+"args": [],
+"method": &"playFamChillingAnim"
+}, {
+"args": [],
+"method": &"GloinkFlyingHouse"
+}, {
+"args": [],
+"method": &"DadAngry"
+}, {
+"args": [],
+"method": &"MomSurprised"
+}, {
+"args": [],
+"method": &"MomScreaming"
+}, {
+"args": [],
+"method": &"fadeInAndOut"
+}, {
+"args": [],
+"method": &"GloinkDancing"
+}, {
+"args": [],
+"method": &"HouseCovered"
+}, {
+"args": [],
+"method": &"fadeInAndOut"
+}, {
+"args": [],
+"method": &"playClackingAnim"
+}, {
+"args": [],
+"method": &"GloinkFlyingApartment"
+}, {
+"args": [],
+"method": &"BobPauses"
+}, {
+"args": [],
+"method": &"BobGroans"
+}]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ThisIsBobLine")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [],
+"times": PackedFloat32Array()
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ThisIsBobLine:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GlassShattering")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [],
+"times": PackedFloat32Array()
+}
+tracks/3/use_blend = true
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GlassShattering:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(16.603926, 31.758303),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Scream")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [],
+"times": PackedFloat32Array()
+}
+tracks/5/use_blend = true
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Scream:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(19.4, 21.766666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Collisions")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [],
+"times": PackedFloat32Array()
+}
+tracks/7/use_blend = true
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Collisions:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(19.833334, 21.766666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ItStillHurtsLine:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(23.733334),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Groan:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(34.6333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r6233"]
+_data = {
+&"Main": SubResource("Animation_pqjft")
+}
+
+[node name="BackstoryAnimation" type="Node2D" unique_id=162097233]
+script = ExtResource("1_gs2xv")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=811139167]
+offset_right = 960.0
+offset_bottom = 540.0
+texture = ExtResource("2_gfd7l")
+
+[node name="BoilerplateAnim" type="AnimationPlayer" parent="." unique_id=1603857524]
+libraries/ = SubResource("AnimationLibrary_k12h1")
+
+[node name="MainAnimPlayer" type="AnimationPlayer" parent="." unique_id=1258501936]
+libraries/ = SubResource("AnimationLibrary_r6233")
+autoplay = &"Main"
+
+[node name="TransitionCover" type="ColorRect" parent="." unique_id=215185606]
+z_index = 1
+offset_left = -500.0
+offset_top = -266.0
+offset_right = 1420.0
+offset_bottom = 814.0
+color = Color(1, 1, 1, 0)
+
+[node name="FadeTimer" type="Timer" parent="." unique_id=2024903979]
+wait_time = 1.75
+one_shot = true
+
+[node name="Groan" type="AudioStreamPlayer" parent="." unique_id=1990413386]
+stream = ExtResource("36_hp2r6")
+
+[node name="Collisions" type="AudioStreamPlayer" parent="." unique_id=1583822019]
+stream = ExtResource("37_ne0cw")
+volume_db = -11.86
+
+[node name="ItStillHurtsLine" type="AudioStreamPlayer" parent="." unique_id=168529170]
+stream = ExtResource("38_tiai6")
+volume_db = -12.683
+
+[node name="KeyboardClacking" type="AudioStreamPlayer" parent="." unique_id=2089894760]
+stream = ExtResource("39_o38iw")
+
+[node name="ThisIsBobLine" type="AudioStreamPlayer" parent="." unique_id=306531689]
+stream = ExtResource("39_rgrd1")
+volume_db = -12.683
+
+[node name="Scream" type="AudioStreamPlayer" parent="." unique_id=2079838392]
+stream = ExtResource("41_tiai6")
+volume_db = -14.706
+
+[node name="GlassShattering" type="AudioStreamPlayer" parent="." unique_id=31079847]
+stream = ExtResource("42_o38iw")
+volume_db = -11.415
+
+[connection signal="timeout" from="FadeTimer" to="." method="_on_fade_timer_timeout"]

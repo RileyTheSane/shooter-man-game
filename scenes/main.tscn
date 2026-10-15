@@ -4,12 +4,15 @@
 [ext_resource type="Script" uid="uid://bqab77rbqc1ix" path="res://scripts/main.gd" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://ddp100v4wj88o" path="res://scenes/shooter_man.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://7p45f0cuh356" path="res://scripts/camera_2d.gd" id="2_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://dfga88no1jgfu" path="res://scenes/backstory_animation.tscn" id="2_tipki"]
 [ext_resource type="PackedScene" uid="uid://cdjiovqnytrqa" path="res://scenes/monochrome_filter.tscn" id="4_tefeu"]
 [ext_resource type="PackedScene" uid="uid://d3yclevc7huqo" path="res://scenes/main_menu.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://bk5kpmb1ok4tn" path="res://scenes/wave_player.tscn" id="9_85g3d"]
 
 [node name="Main" type="Node2D" unique_id=78608440]
 script = ExtResource("1_jyhfs")
+
+[node name="BackstoryAnimation" parent="." unique_id=162097233 instance=ExtResource("2_tipki")]
 
 [node name="MainMenu" parent="." unique_id=413313003 instance=ExtResource("7_o6xl0")]
 
@@ -33,7 +36,7 @@ wait_time = 3.0
 one_shot = true
 
 [node name="CutsceneTimer" type="Timer" parent="." unique_id=630339405]
-wait_time = 1.25
+wait_time = 1.75
 one_shot = true
 
 [node name="HUD" parent="." unique_id=153174832 instance=ExtResource("1_0wfyh")]
