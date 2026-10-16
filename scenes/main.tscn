@@ -12,8 +12,6 @@
 [node name="Main" type="Node2D" unique_id=78608440]
 script = ExtResource("1_jyhfs")
 
-[node name="BackstoryAnimation" parent="." unique_id=162097233 instance=ExtResource("2_tipki")]
-
 [node name="MainMenu" parent="." unique_id=413313003 instance=ExtResource("7_o6xl0")]
 
 [node name="Background" type="CanvasLayer" parent="." unique_id=600377220]
@@ -37,6 +35,18 @@ one_shot = true
 
 [node name="CutsceneTimer" type="Timer" parent="." unique_id=630339405]
 wait_time = 1.75
+one_shot = true
+
+[node name="BackstoryAnimEndTimer" type="Timer" parent="." unique_id=1159556067]
+wait_time = 36.5
+one_shot = true
+
+[node name="AfterBackstoryAnimTimer" type="Timer" parent="." unique_id=733990433]
+wait_time = 1.25
+one_shot = true
+
+[node name="WavePlayerStartDelay" type="Timer" parent="." unique_id=765153864]
+wait_time = 3.0
 one_shot = true
 
 [node name="HUD" parent="." unique_id=153174832 instance=ExtResource("1_0wfyh")]
@@ -68,6 +78,11 @@ offset_right = 1420.0
 offset_bottom = 814.0
 color = Color(1, 1, 1, 0)
 
+[node name="BackstoryAnimation" parent="." unique_id=162097233 instance=ExtResource("2_tipki")]
+
 [connection signal="timeout" from="Camera2D/ZoomPause" to="Camera2D" method="_on_zoom_pause_timeout"]
 [connection signal="timeout" from="ResetTimer" to="." method="_on_reset_timer_timeout"]
 [connection signal="timeout" from="CutsceneTimer" to="." method="_on_cutscene_timer_timeout"]
+[connection signal="timeout" from="BackstoryAnimEndTimer" to="." method="_on_backstory_anim_end_timer_timeout"]
+[connection signal="timeout" from="AfterBackstoryAnimTimer" to="." method="_on_after_backstory_anim_timer_timeout"]
+[connection signal="timeout" from="WavePlayerStartDelay" to="." method="_on_wave_player_start_delay_timeout"]

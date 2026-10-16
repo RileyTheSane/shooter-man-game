@@ -270,8 +270,8 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.125, 13.066667, 14.316668, 16.6, 16.975, 17.3, 19.5, 20.5083, 20.6, 21.7583, 27.508337, 28.758337, 31.758335, 32.133335, 34.633335),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.125, 13.066667, 14.316668, 16.6, 16.975, 17.3, 19.5, 20.5083, 20.6, 21.7583, 27.508337, 28.758337, 31.758335, 32.133335, 34.633335, 37.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "values": [{
 "args": [],
 "method": &"show"
@@ -320,6 +320,9 @@ tracks/0/keys = {
 }, {
 "args": [],
 "method": &"BobGroans"
+}, {
+"args": [],
+"method": &"hide"
 }]
 }
 tracks/1/type = "audio"
@@ -429,14 +432,14 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Groan:playing")
+tracks/10/path = NodePath("KeyboardClacking:playing")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(34.6333),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 14.3167, 28.7583, 32.1333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [true]
+"values": [true, false, true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r6233"]
@@ -457,7 +460,6 @@ libraries/ = SubResource("AnimationLibrary_k12h1")
 
 [node name="MainAnimPlayer" type="AnimationPlayer" parent="." unique_id=1258501936]
 libraries/ = SubResource("AnimationLibrary_r6233")
-autoplay = &"Main"
 
 [node name="TransitionCover" type="ColorRect" parent="." unique_id=215185606]
 z_index = 1
@@ -480,14 +482,15 @@ volume_db = -11.86
 
 [node name="ItStillHurtsLine" type="AudioStreamPlayer" parent="." unique_id=168529170]
 stream = ExtResource("38_tiai6")
-volume_db = -12.683
+volume_db = 1.0
 
 [node name="KeyboardClacking" type="AudioStreamPlayer" parent="." unique_id=2089894760]
 stream = ExtResource("39_o38iw")
+volume_db = -2.0
 
 [node name="ThisIsBobLine" type="AudioStreamPlayer" parent="." unique_id=306531689]
 stream = ExtResource("39_rgrd1")
-volume_db = -12.683
+volume_db = 1.0
 
 [node name="Scream" type="AudioStreamPlayer" parent="." unique_id=2079838392]
 stream = ExtResource("41_tiai6")
