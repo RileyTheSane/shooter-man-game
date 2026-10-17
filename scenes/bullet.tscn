@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cai83817v7n30"]
 
 [ext_resource type="Script" uid="uid://dkc7ulx3md3q6" path="res://scripts/bullet.gd" id="1_mkf8s"]
+[ext_resource type="AudioStream" uid="uid://d3j6i66y8yqke" path="res://assets/sfx/GunShot.mp3" id="2_y25gk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h1aey"]
 size = Vector2(6, 3)
@@ -34,6 +35,9 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=353764658]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_h1aey")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=679966911]
+stream = ExtResource("2_y25gk")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

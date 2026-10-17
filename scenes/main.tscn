@@ -38,7 +38,7 @@ wait_time = 1.75
 one_shot = true
 
 [node name="BackstoryAnimEndTimer" type="Timer" parent="." unique_id=1159556067]
-wait_time = 36.5
+wait_time = 37.55
 one_shot = true
 
 [node name="AfterBackstoryAnimTimer" type="Timer" parent="." unique_id=733990433]

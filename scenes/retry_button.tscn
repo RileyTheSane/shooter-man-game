@@ -15,7 +15,7 @@ region_rect = Rect2(333, 2, 260, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0dq1g"]
 atlas = ExtResource("1_5mc3x")
-region = Rect2(333, 203, 111, 29)
+region = Rect2(566, 379, 123, 33)
 
 [sub_resource type="Animation" id="Animation_o6xl0"]
 length = 0.001
@@ -41,7 +41,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Rect2(333, 203, 111, 29)]
+"values": [Rect2(566, 379, 123, 33)]
 }
 
 [sub_resource type="Animation" id="Animation_tipki"]
@@ -71,7 +71,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.125, 0.25),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Rect2(333, 203, 111, 29), Rect2(333, 235, 104, 27), Rect2(333, 265, 102, 27)]
+"values": [Rect2(566, 379, 123, 33), Rect2(566, 415, 123, 31), Rect2(566, 449, 120, 29)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_85g3d"]
@@ -169,10 +169,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -130.0
+offset_left = -79.0
 offset_top = 302.0
-offset_right = 130.0
-offset_bottom = 366.00037
+offset_right = 79.32001
+offset_bottom = 366.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(130, 31.687897)
@@ -183,9 +183,9 @@ script = ExtResource("2_mr0rv")
 
 [node name="RetryText" type="TextureRect" parent="." unique_id=1103363295]
 layout_mode = 0
-offset_left = 73.0
+offset_left = 17.375
 offset_top = 18.0
-offset_right = 184.0
+offset_right = 140.51505
 offset_bottom = 47.0
 texture = SubResource("AtlasTexture_0dq1g")
 stretch_mode = 3

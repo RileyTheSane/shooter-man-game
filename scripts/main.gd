@@ -70,14 +70,17 @@ func _on_backstory_anim_end_timer_timeout() -> void:
 	transparencyTween.tween_property($TransitionCover, "color", Color(1, 1, 1, 1), 1.25)\
 		.set_trans(Tween.TRANS_LINEAR)
 	
-	$ShooterMan.reset()
 	$AfterBackstoryAnimTimer.start()
 
 func _on_after_backstory_anim_timer_timeout() -> void:
 	$BackstoryAnimation/BoilerplateAnim.stop()
 	$BackstoryAnimation.hide()
-	$TransitionCover.color = Color(1, 1, 1, 0)
+	$ShooterMan.playState()
 	$WavePlayerStartDelay.start()
+	
+	var transparencyTween = create_tween() 
+	transparencyTween.tween_property($TransitionCover, "color", Color(1, 1, 1, 0), 1.25)\
+		.set_trans(Tween.TRANS_LINEAR)
 
 func _on_wave_player_start_delay_timeout() -> void:
 	$WavePlayer.start()

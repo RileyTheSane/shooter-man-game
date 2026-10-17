@@ -1,11 +1,12 @@
 extends CharacterBody2D
 
-@export var damage = 25
+@export var damage = 50
 @export var enabled = true
 const SPEED = 600.00
 
 func _ready() -> void:
 	velocity *= SPEED
+	$AudioStreamPlayer.play()
 
 func _physics_process(_delta: float) -> void:
 	if enabled:
