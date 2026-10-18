@@ -35,11 +35,22 @@ func _on_shoot_timer_timeout() -> void:
 
 
 func update_health(change: float):
-	health += change
-	$SimpleHealthBar.show()
-	$SimpleHealthBar.update(max_health, health)
-	if health <= 0:
-		queue_free()
+	if (health > 0): # only do the sound effects and stuff if the gloink is still alive (health > 100)
+		health += change
+		$SimpleHealthBar.show()
+		$SimpleHealthBar.update(max_health, health)
+	
+		if (change < 0):
+			$HitSoundEffect.play()
+		
+		if health <= 0:
+			set_collision_layer_value(1, false) # make noting able to collide with the hidden gloink
+			set_collision_mask_value(1, false)
+			$DeathSoundEffect.play()
+			hide()
+
+func _on_death_sound_effect_finished() -> void:  # on death queue free so that the sound effect still plays
+	queue_free()
 
 
 func _on_start_wait_timeout() -> void:

@@ -39,6 +39,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		var indicator = indicator_scene.instantiate()
 		indicator.position = pos
 		position = pos
+		$SimpleHealthBar.hide()
 		$"../../Effects".add_child(indicator)
 		
 		$LaunchAnimPause.start() # start timer that ends when the launch animation does the launch thing
@@ -54,25 +55,38 @@ func _on_launch_anim_pause_timeout() -> void:
 	set_collision_layer_value(3, true)
 	set_collision_mask_value(3, true)
 	
+	if (health < max_health):
+		$SimpleHealthBar.show()
+	
 	damage = 60 # make damage happen
 
 func _on_max_fly_time_timeout() -> void:
 	queue_free()
 
 func update_health(change: float):
-	if !launched:
-		health += change
+	if (health > 0): # only do the sound effects and stuff if the gloink is still alive (health > 100)
+		if (launched):
+			health += change * 2 # heptagon takes double damage when launched
+		else:
+			health += change
 		$SimpleHealthBar.show()
 		$SimpleHealthBar.update(max_health, health)
+	
+		if (change < 0):
+			$HitSoundEffect.play()
+		
 		if health <= 0:
-			queue_free()
+			$AttackStartDelay.stop()
+			set_collision_layer_value(1, false) # make noting able to collide with the hidden gloink
+			set_collision_mask_value(1, false)
+			$DeathSoundEffect.play()
+			hide()
+
+func _on_death_sound_effect_finished() -> void:  # on death queue free so that the sound effect still plays
+	queue_free()
 
 
 func _on_start_wait_timeout() -> void:
 	enabled = true
-	$AttackStartDelay.wait_time = randf_range(1, 3)
+	$AttackStartDelay.wait_time = randf_range(4, 6)
 	$AttackStartDelay.start()
-
-
-func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	queue_free()

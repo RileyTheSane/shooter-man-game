@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://d3dflvqu5pwd2"]
 
-[ext_resource type="Texture2D" uid="uid://8t5r8i4hc8lq" path="res://assets/ShooterManArt.png" id="1_856ga"]
+[ext_resource type="Texture2D" uid="uid://b7ucgvbofyu8y" path="res://assets/ShooterManArt.png" id="1_856ga"]
 [ext_resource type="Script" uid="uid://dijtjfgg358sg" path="res://scripts/pentagon_gloink.gd" id="1_ybx0y"]
 [ext_resource type="PackedScene" uid="uid://dswxx7a3ti75f" path="res://scenes/simple_health_bar.tscn" id="3_4dma0"]
+[ext_resource type="AudioStream" uid="uid://c1x76l6hy5l7f" path="res://assets/sfx/GloinkHit.mp3" id="4_20huk"]
+[ext_resource type="AudioStream" uid="uid://0k44lln5hq4b" path="res://assets/sfx/GloinkDeath.mp3" id="5_w0sor"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ybx0y"]
 atlas = ExtResource("1_856ga")
@@ -28,7 +30,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ms4kt")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 8.0
 }]
@@ -59,6 +61,13 @@ wait_time = 0.001
 one_shot = true
 autostart = true
 
+[node name="HitSoundEffect" type="AudioStreamPlayer" parent="." unique_id=98970494]
+stream = ExtResource("4_20huk")
+
+[node name="DeathSoundEffect" type="AudioStreamPlayer" parent="." unique_id=1111482984]
+stream = ExtResource("5_w0sor")
+
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
 [connection signal="timeout" from="RandomStartOffset" to="." method="_on_start_offset_timer_timeout"]
 [connection signal="timeout" from="StartWait" to="." method="_on_start_wait_timeout"]
+[connection signal="finished" from="DeathSoundEffect" to="." method="_on_death_sound_effect_finished"]

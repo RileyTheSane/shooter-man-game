@@ -57,13 +57,15 @@ func _on_reset_timer_timeout() -> void:
 
 func _on_cutscene_timer_timeout() -> void:
 	$MainMenu.hide()
-	$ShooterMan.nonexistentState()
-	$BackstoryAnimation.start()
-	$BackstoryAnimEndTimer.start()
-	
+	#$ShooterMan.nonexistentState()
+	#$BackstoryAnimation.start()
+	#$BackstoryAnimEndTimer.start()
+	#
 	var transparencyTween = create_tween() 
 	transparencyTween.tween_property($TransitionCover, "color", Color(1, 1, 1, 0), 1.25)\
 		.set_trans(Tween.TRANS_LINEAR)
+	$ShooterMan.playState()
+	$WavePlayer.start()
 
 func _on_backstory_anim_end_timer_timeout() -> void:
 	var transparencyTween = create_tween() 

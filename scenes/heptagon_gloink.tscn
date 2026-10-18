@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://cojsfwxn7dapl"]
 
 [ext_resource type="Script" uid="uid://uxs7h840gud2" path="res://scripts/heptagon_gloink.gd" id="1_0urw8"]
-[ext_resource type="Texture2D" uid="uid://8t5r8i4hc8lq" path="res://assets/ShooterManArt.png" id="1_i3rqa"]
+[ext_resource type="Texture2D" uid="uid://b7ucgvbofyu8y" path="res://assets/ShooterManArt.png" id="1_i3rqa"]
 [ext_resource type="PackedScene" uid="uid://dswxx7a3ti75f" path="res://scenes/simple_health_bar.tscn" id="3_y410e"]
+[ext_resource type="AudioStream" uid="uid://c1x76l6hy5l7f" path="res://assets/sfx/GloinkHit.mp3" id="4_gooko"]
+[ext_resource type="AudioStream" uid="uid://0k44lln5hq4b" path="res://assets/sfx/GloinkDeath.mp3" id="5_7cvgb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0urw8"]
 atlas = ExtResource("1_i3rqa")
@@ -28,7 +30,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_npr0p")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 8.0
 }]
@@ -94,7 +96,7 @@ _data = {
 &"RESET": SubResource("Animation_npr0p")
 }
 
-[node name="HeptagonGloink" type="CharacterBody2D" unique_id=978445233]
+[node name="HeptagonGloink" type="CharacterBody2D" unique_id=978445233 groups=["gloink"]]
 script = ExtResource("1_0urw8")
 
 [node name="Mask" type="ColorRect" parent="." unique_id=1965640332]
@@ -122,7 +124,6 @@ one_shot = true
 wait_time = 1.5
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1534236499]
-visible = false
 polygon = PackedVector2Array(-11, -4, 0, -11, 10, -4, 11, 4, 5, 11, -6, 11, -11, 3)
 
 [node name="MaxFlyTime" type="Timer" parent="." unique_id=850955476]
@@ -138,6 +139,12 @@ one_shot = true
 autostart = true
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1911315258]
+
+[node name="HitSoundEffect" type="AudioStreamPlayer" parent="." unique_id=1654895973]
+stream = ExtResource("4_gooko")
+
+[node name="DeathSoundEffect" type="AudioStreamPlayer" parent="." unique_id=2033963938]
+stream = ExtResource("5_7cvgb")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="AttackStartDelay" to="." method="_on_attack_start_delay_timeout"]
