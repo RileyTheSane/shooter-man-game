@@ -79,6 +79,7 @@ func _on_damage_tick_timeout() -> void:
 func _on_collision_body_entered(body: Node2D) -> void:
 	if body != null:
 		if body.is_in_group("gloink") && can_take_damage:
+			$BobHit.play()
 			$DamageTick.start()
 			health -= body.damage
 			can_take_damage = false
@@ -87,6 +88,7 @@ func _on_collision_body_entered(body: Node2D) -> void:
 	HUDHealthBar.update(max_health, health)
 	
 	if health <= 0:
+		$BobDeath.play()
 		can_move = false # stop normal functions
 		can_shoot = false
 		arm_can_rotate = false
@@ -117,6 +119,7 @@ func updateDeathAnim():
 		2:
 			$Body.play("deathAnimation2")
 			$DeathAnimTimer.start()
+			$BobCollapses.play()
 		3:
 			curDeathAnim = 0
 			$"../HUD/RetryButton".show_button()

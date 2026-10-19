@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://b7ucgvbofyu8y" path="res://assets/ShooterManArt.png" id="1_uqv12"]
 [ext_resource type="PackedScene" uid="uid://dfkcx2bjo5xsa" path="res://scenes/health_bar.tscn" id="3_0ifkv"]
 [ext_resource type="PackedScene" uid="uid://dbx4q3jtc56k8" path="res://scenes/arm.tscn" id="3_bsdys"]
+[ext_resource type="AudioStream" uid="uid://qwqavtybr6at" path="res://assets/sfx/BobHit.mp3" id="5_f1wiw"]
+[ext_resource type="AudioStream" uid="uid://4v8evh287n5k" path="res://assets/sfx/BobDeath.mp3" id="6_lniwv"]
+[ext_resource type="AudioStream" uid="uid://b5cvpflgn5t0e" path="res://assets/sfx/BobCollapses.mp3" id="7_lniwv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bval2"]
 atlas = ExtResource("1_uqv12")
@@ -218,7 +221,7 @@ script = ExtResource("1_1y536")
 [node name="Body" type="AnimatedSprite2D" parent="." unique_id=145742071]
 position = Vector2(-6, 0)
 sprite_frames = SubResource("SpriteFrames_s0wgv")
-animation = &"idle"
+animation = &"deathAnimation2"
 autoplay = "idle"
 
 [node name="Arm" parent="." unique_id=1917099730 instance=ExtResource("3_bsdys")]
@@ -257,6 +260,17 @@ wait_time = 3.0
 one_shot = true
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1598939542]
+
+[node name="BobHit" type="AudioStreamPlayer" parent="." unique_id=862162247]
+stream = ExtResource("5_f1wiw")
+volume_db = -4.0
+
+[node name="BobDeath" type="AudioStreamPlayer" parent="." unique_id=2056703793]
+stream = ExtResource("6_lniwv")
+volume_db = -7.0
+
+[node name="BobCollapses" type="AudioStreamPlayer" parent="." unique_id=1466949132]
+stream = ExtResource("7_lniwv")
 
 [connection signal="animation_finished" from="Body" to="." method="_on_body_animation_finished"]
 [connection signal="body_entered" from="Collision" to="." method="_on_collision_body_entered"]
