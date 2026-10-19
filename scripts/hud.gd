@@ -6,6 +6,7 @@ var tween_init = false
 func _on_retry_button_pressed() -> void:
 	$"..".reset_game()
 	$RetryButton/AnimationPlayer.play("exit")
+	$Click.play()
 
 func _ready():
 	shooter_man = %ShooterMan

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://3ml821j4vpnx" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://b7ucgvbofyu8y" path="res://assets/ShooterManArt.png" id="1_l6cm7"]
+[ext_resource type="AudioStream" uid="uid://cosl6h3he4iym" path="res://assets/sfx/ButtonClick.mp3" id="3_bqqt6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l6cm7"]
 texture = ExtResource("1_l6cm7")
@@ -113,6 +114,42 @@ tracks/5/keys = {
 "update": 0,
 "values": [Rect2(566, 271, 376, 33)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Control/EasyButton/TextureRect:texture:region")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(692, 379, 81, 30)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Control/MediumButton/TextureRect:texture:region")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(776, 379, 139, 31)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Control/HardButton/TextureRect:texture:region")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(918, 379, 88, 32)]
+}
 
 [sub_resource type="Animation" id="Animation_bqqt6"]
 resource_name = "Wiggle"
@@ -190,12 +227,66 @@ tracks/5/keys = {
 "update": 0,
 "values": [Rect2(566, 271, 376, 33), Rect2(566, 307, 376, 33), Rect2(566, 343, 377, 33)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Control/EasyButton/TextureRect:texture:region")
+tracks/6/interp = 0
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(692, 379, 81, 30), Rect2(692, 412, 80, 31), Rect2(692, 446, 83, 31)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Control/MediumButton/TextureRect:texture:region")
+tracks/7/interp = 0
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(776, 379, 139, 31), Rect2(778, 413, 141, 34), Rect2(778, 450, 138, 32)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Control/HardButton/TextureRect:texture:region")
+tracks/8/interp = 0
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(918, 379, 88, 32), Rect2(922, 414, 87, 32), Rect2(922, 449, 85, 31)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wu84c"]
 _data = {
 &"RESET": SubResource("Animation_ekxnf"),
 &"Wiggle": SubResource("Animation_bqqt6")
 }
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bqqt6"]
+load_path = "res://.godot/imported/ShooterManArt.png-873538a7601458dbc13b71f71cf05657.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wu84c"]
+atlas = SubResource("CompressedTexture2D_bqqt6")
+region = Rect2(692, 379, 81, 30)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wu84c"]
+load_path = "res://.godot/imported/ShooterManArt.png-873538a7601458dbc13b71f71cf05657.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ln24"]
+atlas = SubResource("CompressedTexture2D_wu84c")
+region = Rect2(776, 379, 139, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtw2f"]
+atlas = SubResource("CompressedTexture2D_wu84c")
+region = Rect2(918, 379, 88, 32)
 
 [node name="MainMenu" type="CanvasLayer" unique_id=1992977868]
 layer = 6
@@ -214,10 +305,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 237.00003
-offset_top = 245.0
-offset_right = 369.00003
-offset_bottom = 310.0
+offset_left = 237.00006
+offset_top = 179.0
+offset_right = 369.00006
+offset_bottom = 244.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.265, 1.265)
@@ -228,19 +319,20 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_l6cm7")
 
 [node name="TextureRect" type="TextureRect" parent="Control/Play" unique_id=1093862489]
 layout_mode = 0
-offset_left = 18.0
-offset_top = 15.0
-offset_right = 108.0
-offset_bottom = 52.0
+offset_left = 13.9105
+offset_top = 12.240463
+offset_right = 103.9105
+offset_bottom = 49.240463
+scale = Vector2(1.095, 1.095)
 texture = SubResource("AtlasTexture_xvxy0")
 stretch_mode = 3
 
 [node name="StardanceButton" type="Button" parent="Control" unique_id=1616947573]
 layout_mode = 0
 offset_left = 185.0
-offset_top = 365.0
+offset_top = 299.0
 offset_right = 481.0
-offset_bottom = 430.0
+offset_bottom = 364.0
 scale = Vector2(0.91, 0.91)
 theme_override_styles/normal = SubResource("StyleBoxTexture_wu84c")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_wu84c")
@@ -278,5 +370,92 @@ root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_wu84c")
 autoplay = &"Wiggle"
 
+[node name="EasyButton" type="Button" parent="Control" unique_id=220875958]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 69.0
+offset_top = 358.0
+offset_right = 190.955
+offset_bottom = 413.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(66.40317, 32.015823)
+theme_override_styles/normal = SubResource("StyleBoxTexture_l6cm7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_l6cm7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_l6cm7")
+
+[node name="TextureRect" type="TextureRect" parent="Control/EasyButton" unique_id=1232583120]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 9.0
+offset_right = 105.0
+offset_bottom = 46.0
+texture = SubResource("AtlasTexture_wu84c")
+stretch_mode = 3
+
+[node name="MediumButton" type="Button" parent="Control" unique_id=1523016774]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 211.0
+offset_top = 358.0
+offset_right = 389.405
+offset_bottom = 413.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(66.40317, 32.015823)
+theme_override_styles/normal = SubResource("StyleBoxTexture_l6cm7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_l6cm7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_l6cm7")
+
+[node name="TextureRect" type="TextureRect" parent="Control/MediumButton" unique_id=1935459378]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 9.0
+offset_right = 110.0
+offset_bottom = 46.0
+texture = SubResource("AtlasTexture_8ln24")
+stretch_mode = 3
+
+[node name="HardButton" type="Button" parent="Control" unique_id=2085156198]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 406.0
+offset_top = 358.0
+offset_right = 525.815
+offset_bottom = 413.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(66.40317, 32.015823)
+theme_override_styles/normal = SubResource("StyleBoxTexture_l6cm7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_l6cm7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_l6cm7")
+
+[node name="TextureRect" type="TextureRect" parent="Control/HardButton" unique_id=64761172]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 8.0
+offset_right = 104.0
+offset_bottom = 45.0
+texture = SubResource("AtlasTexture_rtw2f")
+stretch_mode = 3
+
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=344038579]
+stream = ExtResource("3_bqqt6")
+
 [connection signal="pressed" from="Control/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Control/StardanceButton" to="." method="_on_stardance_button_pressed"]
+[connection signal="pressed" from="Control/EasyButton" to="." method="_on_easy_button_pressed"]
+[connection signal="pressed" from="Control/MediumButton" to="." method="_on_medium_button_pressed"]
+[connection signal="pressed" from="Control/HardButton" to="." method="_on_hard_button_pressed"]
