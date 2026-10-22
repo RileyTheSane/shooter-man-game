@@ -263,7 +263,7 @@ one_shot = true
 
 [node name="BobHit" type="AudioStreamPlayer" parent="." unique_id=862162247]
 stream = ExtResource("5_f1wiw")
-volume_db = -2.0
+volume_db = 1.0
 
 [node name="BobDeath" type="AudioStreamPlayer" parent="." unique_id=2056703793]
 stream = ExtResource("6_lniwv")

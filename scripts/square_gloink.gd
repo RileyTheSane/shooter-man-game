@@ -9,6 +9,14 @@ var speed = 80.0
 
 func _ready() -> void:
 	$SimpleHealthBar.hide()
+	var difficulty = $"../..".get_difficulty()
+	match difficulty:
+		"easy":
+			speed = 20
+		"medium":
+			speed = 35
+		"hard":
+			speed = 60
 
 
 func _physics_process(_delta: float) -> void:
@@ -18,13 +26,28 @@ func _physics_process(_delta: float) -> void:
 		move_and_slide()
 
 func _on_roll_timer_timeout() -> void:
+	var difficulty = $"../..".get_difficulty()
+	match difficulty:
+		"easy":
+			speed = 140
+		"medium":
+			speed = 200
+		"hard":
+			speed = 250
 	$RollStop.start() # start the roll stop timer
-	speed = 250
 	damage = 50
 	$AnimationPlayer.play("Roll")
 
 func _on_roll_stop_timeout() -> void: # when the roll stops, reset the rotation with RESET animation
-	speed = 65
+	var difficulty = $"../..".get_difficulty()
+	match difficulty:
+		"easy":
+			speed = 20
+		"medium":
+			speed = 35
+		"hard":
+			speed = 60
+	
 	damage = 25
 	$AnimationPlayer.play("RESET")
 
@@ -38,6 +61,9 @@ func update_health(change: float):
 			$HitSoundEffect.play()
 		
 		if health <= 0:
+			enabled = false
+			$RollTimer.stop()
+			$RollStop.stop()
 			set_collision_layer_value(1, false) # make noting able to collide with the hidden gloink
 			set_collision_mask_value(1, false)
 			$DeathSoundEffect.play()

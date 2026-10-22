@@ -5,16 +5,24 @@ var health = 125.00
 var damage = 30
 @export var enabled = false
 @export var shooter_man = null
-const SPEED = 60.0
+var speed = 60.0
 var octagon_projectile_script = preload("res://scenes/octagon_projectile.tscn")
 
 func _ready() -> void:
 	$SimpleHealthBar.hide()
+	var difficulty = $"../..".get_difficulty()
+	match difficulty:
+		"easy":
+			speed = 20
+		"medium":
+			speed = 35
+		"hard":
+			speed = 60
 
 func _physics_process(_delta: float) -> void:
 	if shooter_man && enabled:
 		var direction = (shooter_man.global_position - global_position).normalized()
-		velocity = direction * SPEED
+		velocity = direction * speed
 		move_and_slide()
 
 
@@ -29,8 +37,16 @@ func _on_shoot_timer_timeout() -> void:
 			
 			gloink_proj.add_to_group("gloink")
 			gloink_proj.look_at(shooter_man.position)
-			gloink_proj.velocity = direction
 			gloink_proj.position = direction * 20 + position # move the proj a little bit in the direction of the target so the colliion body doesn't collide with the gloink's collider
+			
+			var difficulty = $"../..".get_difficulty()
+			match difficulty:
+				"easy":
+					gloink_proj.velocity = direction * .5
+				"medium":
+					gloink_proj.velocity = direction * .8
+				"hard":
+					gloink_proj.velocity = direction
 			$"../../Projectiles".add_child(gloink_proj)
 
 
@@ -44,6 +60,8 @@ func update_health(change: float):
 			$HitSoundEffect.play()
 		
 		if health <= 0:
+			enabled = false
+			$ShootTimer.stop()
 			set_collision_layer_value(1, false) # make noting able to collide with the hidden gloink
 			set_collision_mask_value(1, false)
 			$DeathSoundEffect.play()
@@ -56,3 +74,10 @@ func _on_death_sound_effect_finished() -> void:  # on death queue free so that t
 func _on_start_wait_timeout() -> void:
 	enabled = true
 	$ShootTimer.start()
+	
+	var difficulty = $"../..".get_difficulty()
+	match difficulty:
+		"easy":
+			$ShootTimer.wait_time = 4
+		"medium":
+			$ShootTimer.wait_time = 2.25

@@ -1,4 +1,5 @@
 extends Node2D
+var difficulty = "easy"
 
 func _ready():
 	$MainMenu.show()
@@ -86,3 +87,9 @@ func _on_after_backstory_anim_timer_timeout() -> void:
 
 func _on_wave_player_start_delay_timeout() -> void:
 	$WavePlayer.start()
+
+func change_difficulty(difficulty1: String):
+	difficulty = difficulty1
+
+func get_difficulty():
+	return difficulty

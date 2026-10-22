@@ -5,20 +5,27 @@ var health = 100.00
 var damage = 30
 @export var enabled = false
 @export var shooter_man = null
-const SPEED = 60.0
+var speed = 60.0
 var attacking = false
 var launched = false
 
 var indicator_scene = preload("res://scenes/heptagon_ground_indicator.tscn")
 
-
 func _ready() -> void:
 	$SimpleHealthBar.hide()
+	var difficulty = $"../..".get_difficulty()
+	match difficulty:
+		"easy":
+			speed = 20
+		"medium":
+			speed = 35
+		"hard":
+			speed = 60
 
 func _physics_process(_delta: float) -> void:
 	if shooter_man && enabled && !attacking:
 		var direction = (shooter_man.global_position - global_position).normalized()
-		velocity = direction * SPEED
+		velocity = direction * speed
 		move_and_slide()
 	elif shooter_man && enabled && launched:
 		velocity.y = -600
@@ -30,7 +37,6 @@ func _on_attack_start_delay_timeout() -> void:
 	attacking = true
 	$AnimationPlayer.play("Dig")
 	$CollisionPolygon2D.disabled = true
-	
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	# place indicator and pos near player
@@ -44,8 +50,6 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		
 		$LaunchAnimPause.start() # start timer that ends when the launch animation does the launch thing
 
-
-
 func _on_launch_anim_pause_timeout() -> void:
 	$AnimationPlayer.play("RESET")
 	$CollisionPolygon2D.disabled = false
@@ -53,7 +57,6 @@ func _on_launch_anim_pause_timeout() -> void:
 	set_collision_layer_value(1, false) # change collision layer to 3 so that the gloiunk doesn't collide with other gloinks or projectiles
 	set_collision_mask_value(1, false)
 	set_collision_layer_value(3, true)
-	set_collision_mask_value(3, true)
 	
 	if (health < max_health):
 		$SimpleHealthBar.show()
@@ -76,6 +79,7 @@ func update_health(change: float):
 			$HitSoundEffect.play()
 		
 		if health <= 0:
+			enabled = false
 			$AttackStartDelay.stop()
 			set_collision_layer_value(1, false) # make noting able to collide with the hidden gloink
 			set_collision_mask_value(1, false)
@@ -85,8 +89,7 @@ func update_health(change: float):
 func _on_death_sound_effect_finished() -> void:  # on death queue free so that the sound effect still plays
 	queue_free()
 
-
 func _on_start_wait_timeout() -> void:
 	enabled = true
-	$AttackStartDelay.wait_time = randf_range(4, 6)
+	$AttackStartDelay.wait_time = randf_range(3, 9)
 	$AttackStartDelay.start()

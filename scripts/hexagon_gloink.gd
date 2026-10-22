@@ -5,12 +5,19 @@ var health = 30.00
 var damage = 70
 @export var enabled = false
 @export var shooter_man = null
-const SPEED = 300.0
+var speed = 300.0
 var entered_screen = false
 
 func _ready() -> void:
 	$SimpleHealthBar.hide()
-
+	var difficulty = $"../..".get_difficulty()
+	match difficulty:
+		"easy":
+			speed = 140
+		"medium":
+			speed = 225
+		"hard":
+			speed = 300
 
 func _physics_process(_delta: float) -> void:
 	if enabled:
@@ -38,6 +45,7 @@ func update_health(change: float):
 			$HitSoundEffect.play()
 		
 		if health <= 0:
+			enabled = false
 			set_collision_layer_value(1, false) # make noting able to collide with the hidden gloink
 			set_collision_mask_value(1, false)
 			$DeathSoundEffect.play()
@@ -52,5 +60,5 @@ func _on_start_wait_timeout() -> void:
 	
 	$MaxLifetime.start()
 	look_at(shooter_man.position) # look at player
-	velocity = (shooter_man.position - position).normalized() * SPEED# set velocity
+	velocity = (shooter_man.position - position).normalized() * speed# set velocity
 	rotation_degrees += randf_range(-15, 15) # set orientation offset

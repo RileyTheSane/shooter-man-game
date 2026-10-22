@@ -21,8 +21,9 @@ func _ready(): # set the easy butto to be clicked by default
 	$Control/HardButton.modulate = Color(1, 1, 1, .7)
 
 func _on_easy_button_pressed() -> void:
-	var difficulty = "easy"
+	difficulty = "easy"
 	$Click.play()
+	$"..".change_difficulty(difficulty)
 	
 	$Control/EasyButton.scale = Vector2(1, 1)
 	$Control/MediumButton.scale = Vector2(.8, .8)
@@ -33,8 +34,9 @@ func _on_easy_button_pressed() -> void:
 	$Control/HardButton.modulate = Color(1, 1, 1, .7)
 
 func _on_medium_button_pressed() -> void:
-	var difficulty = "medium"
+	difficulty = "medium"
 	$Click.play()
+	$"..".change_difficulty(difficulty)
 	
 	$Control/EasyButton.scale = Vector2(.8, .8)
 	$Control/MediumButton.scale = Vector2(1, 1)
@@ -45,8 +47,9 @@ func _on_medium_button_pressed() -> void:
 	$Control/HardButton.modulate = Color(1, 1, 1, .7)
 
 func _on_hard_button_pressed() -> void:
-	var difficulty = "hard"
+	difficulty = "hard"
 	$Click.play()
+	$"..".change_difficulty(difficulty)
 	
 	$Control/EasyButton.scale = Vector2(.8, .8)
 	$Control/MediumButton.scale = Vector2(.8, .8)
@@ -55,7 +58,6 @@ func _on_hard_button_pressed() -> void:
 	$Control/EasyButton.modulate = Color(1, 1, 1, .7)
 	$Control/MediumButton.modulate = Color(1, 1, 1, .7)
 	$Control/HardButton.modulate = Color(1, 1, 1, 1)
-
 
 func getDifficulty():
 	return difficulty
