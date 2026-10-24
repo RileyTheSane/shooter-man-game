@@ -33,16 +33,16 @@ This project was made with the Godot game engine.
 <p align="right"></p>
 
 ## Sound Effect Credits
-(This can also be found in SoundEffectCredits.txt)
-
-Gun Shot sound - Eaglaxle on Pixabay
-Gloink Death and hit - GFX Sounds on Youtube
-Bob death - gprosser on Freesound
-Bob falling - Rowmag on Freesound
-Bob hit - EminYILDIRIM on Freesound
-Button Click - malle99 on Freesound
-
-Backstory Animation:
-Gloink Collision - LemonDemmon on Youtube
-Scream - topschool on Freesound
-Glass Shattering - masterchief121_ on Freesound
+(This can also be found in SoundEffectCredits.txt)<br />
+<br />
+Gun Shot sound - Eaglaxle on Pixabay<br />
+Gloink Death and hit - GFX Sounds on Youtube<br />
+Bob death - gprosser on Freesound<br />
+Bob falling - Rowmag on Freesound<br />
+Bob hit - EminYILDIRIM on Freesound<br />
+Button Click - malle99 on Freesound<br />
+<br />
+Backstory Animation:<br />
+Gloink Collision - LemonDemmon on Youtube<br />
+Scream - topschool on Freesound<br />
+Glass Shattering - masterchief121_ on Freesound<br />
