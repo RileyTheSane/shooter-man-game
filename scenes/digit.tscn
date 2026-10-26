@@ -1,0 +1,240 @@
+[gd_scene format=3 uid="uid://d1k0k0v450p0o"]
+
+[ext_resource type="Script" uid="uid://cei7s11bqe1wx" path="res://scripts/digit.gd" id="1_3i0ox"]
+
+[sub_resource type="Animation" id="Animation_a3lpo"]
+resource_name = "-"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture:region")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(1064, 331, 35, 35), Rect2(1102, 331, 35, 35), Rect2(1140, 331, 35, 35)]
+}
+
+[sub_resource type="Animation" id="Animation_8hyce"]
+resource_name = "1"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture:region")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(451, 469, 35, 35), Rect2(489, 469, 35, 35), Rect2(527, 469, 35, 35)]
+}
+
+[sub_resource type="Animation" id="Animation_3i0ox"]
+resource_name = "1"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture:region")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(447, 203, 35, 35), Rect2(485, 203, 35, 35), Rect2(523, 203, 35, 35)]
+}
+
+[sub_resource type="Animation" id="Animation_eh1qu"]
+resource_name = "1"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture:region")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(447, 241, 35, 35), Rect2(485, 241, 35, 35), Rect2(523, 241, 35, 35)]
+}
+
+[sub_resource type="Animation" id="Animation_vb1tl"]
+resource_name = "1"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture:region")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(451, 279, 35, 35), Rect2(489, 279, 35, 35), Rect2(527, 279, 35, 35)]
+}
+
+[sub_resource type="Animation" id="Animation_uwp2o"]
+resource_name = "1"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture:region")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(451, 317, 35, 35), Rect2(489, 317, 35, 35), Rect2(527, 317, 35, 35)]
+}
+
+[sub_resource type="Animation" id="Animation_sewaj"]
+resource_name = "1"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture:region")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(451, 355, 35, 35), Rect2(489, 355, 35, 35), Rect2(527, 355, 35, 35)]
+}
+
+[sub_resource type="Animation" id="Animation_7wsat"]
+resource_name = "1"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture:region")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(451, 393, 35, 35), Rect2(489, 393, 35, 35), Rect2(527, 393, 35, 35)]
+}
+
+[sub_resource type="Animation" id="Animation_asqad"]
+resource_name = "1"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture:region")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(451, 431, 35, 35), Rect2(489, 431, 35, 35), Rect2(527, 431, 35, 35)]
+}
+
+[sub_resource type="Animation" id="Animation_63pgw"]
+resource_name = "1"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture:region")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(338, 409, 35, 35), Rect2(376, 409, 35, 35), Rect2(414, 409, 35, 35)]
+}
+
+[sub_resource type="Animation" id="Animation_jwjid"]
+resource_name = "1"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture:region")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(338, 447, 35, 35), Rect2(376, 447, 35, 35), Rect2(414, 447, 35, 35)]
+}
+
+[sub_resource type="Animation" id="Animation_17fmg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(485, 203, 35, 35)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8hyce"]
+_data = {
+&"-": SubResource("Animation_a3lpo"),
+&"0": SubResource("Animation_8hyce"),
+&"1": SubResource("Animation_3i0ox"),
+&"2": SubResource("Animation_eh1qu"),
+&"3": SubResource("Animation_vb1tl"),
+&"4": SubResource("Animation_uwp2o"),
+&"5": SubResource("Animation_sewaj"),
+&"6": SubResource("Animation_7wsat"),
+&"7": SubResource("Animation_asqad"),
+&"8": SubResource("Animation_63pgw"),
+&"9": SubResource("Animation_jwjid"),
+&"RESET": SubResource("Animation_17fmg")
+}
+
+[node name="Digit" type="Control" unique_id=532940151]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3i0ox")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=960303608]
+libraries/ = SubResource("AnimationLibrary_8hyce")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=521132715]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -21.0
+offset_right = 20.0
+offset_bottom = 19.0

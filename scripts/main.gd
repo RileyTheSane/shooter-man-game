@@ -1,5 +1,9 @@
 extends Node2D
 var difficulty = "easy"
+@export var gloinkKillPoints = 0;
+@export var roundStarted = 0;
+@export var bulletsUsed = 0;
+@export var damageTaken = 0;
 
 func _ready():
 	$MainMenu.show()
@@ -51,28 +55,32 @@ func _on_reset_timer_timeout() -> void:
 		.set_trans(Tween.TRANS_LINEAR)
 	
 	%ShooterMan.reset() # reset bob
+	$ShooterMan.playState()
 	$WavePlayer.reset() # reset the wave num
 	
 	$MonochromeFilter/ColorRect.color = Color(1, 1, 1, 0) # remove grayscale
+	
+	roundStarted = Time.get_ticks_msec()
+	gloinkKillPoints = 0;
+	bulletsUsed = 0;
+	damageTaken = 0;
 
 
 func _on_cutscene_timer_timeout() -> void:
 	$MainMenu.hide()
-	#$ShooterMan.nonexistentState()
-	#$BackstoryAnimation.start()
-	#$BackstoryAnimEndTimer.start()
-	#
+	$ShooterMan.nonexistentState()
+	$BackstoryAnimation.start()
+	$BackstoryAnimEndTimer.start()
 	var transparencyTween = create_tween() 
 	transparencyTween.tween_property($TransitionCover, "color", Color(1, 1, 1, 0), 1.25)\
 		.set_trans(Tween.TRANS_LINEAR)
-	$ShooterMan.playState()
-	$WavePlayer.start()
+	
 
 func _on_backstory_anim_end_timer_timeout() -> void:
 	var transparencyTween = create_tween() 
 	transparencyTween.tween_property($TransitionCover, "color", Color(1, 1, 1, 1), 1.25)\
 		.set_trans(Tween.TRANS_LINEAR)
-	
+	roundStarted = Time.get_ticks_msec()
 	$AfterBackstoryAnimTimer.start()
 
 func _on_after_backstory_anim_timer_timeout() -> void:
@@ -93,3 +101,17 @@ func change_difficulty(difficulty1: String):
 
 func get_difficulty():
 	return difficulty
+
+func endGame():
+	var transparencyTween = create_tween() 
+	transparencyTween.tween_property($TransitionCover, "color", Color(1, 1, 1, 1), 1.25)\
+		.set_trans(Tween.TRANS_LINEAR)
+	$EndGameTimer.start()
+
+
+	
+
+func _on_end_game_timer_timeout() -> void:
+	$ShooterMan.nonexistentState()
+	$TransitionCover.color = Color(1, 1, 1, 0)
+	$ScoreScreen.start()

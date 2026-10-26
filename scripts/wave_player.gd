@@ -12,7 +12,7 @@ var pause_has_happened = false
 var wave_num = 1
 
 func start():
-	wave9()
+	wave1()
 	%ShooterMan.can_take_damage = false # make him invincible until the wave actually starts
 	$PreventNewWave.start()
 
@@ -41,6 +41,8 @@ func _physics_process(_delta: float) -> void:
 					wave8()
 				9:
 					wave9()
+				10:
+					$"..".endGame()
 			$PreventNewWave.start()
 			new_wave_can_start = false
 			pause_has_happened = false

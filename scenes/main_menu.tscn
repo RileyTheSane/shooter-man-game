@@ -357,6 +357,7 @@ texture = SubResource("AtlasTexture_0dq1g")
 stretch_mode = 3
 
 [node name="MadeBy" type="TextureRect" parent="Control" unique_id=986025710]
+visible = false
 layout_mode = 0
 offset_left = 317.0
 offset_top = 493.0

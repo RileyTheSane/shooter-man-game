@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://xq5p642cso4o"]
+
+[ext_resource type="Script" uid="uid://dngiyuc4xsett" path="res://scripts/digits.gd" id="1_abwpn"]
+
+[node name="Digits" type="Control" unique_id=614833132]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_abwpn")

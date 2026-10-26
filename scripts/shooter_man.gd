@@ -6,9 +6,9 @@ const MOVE_SPEED = 160.00
 @export var can_take_damage = false
 var shooting = false
 
-var can_move = false # these varaibles are here to disable any common functions for stuff like cutscenes
-var can_shoot = false
-var arm_can_rotate = false
+@export var can_move = false # these varaibles are here to disable any common functions for stuff like cutscenes
+@export var can_shoot = false
+@export var arm_can_rotate = false
 
 var bullet_scene = preload("res://scenes/bullet.tscn")
 var HUD
@@ -83,6 +83,7 @@ func _on_collision_body_entered(body: Node2D) -> void:
 			$DamageTick.start()
 			health -= body.damage
 			can_take_damage = false
+			$"..".damageTaken += body.damage
 	
 	$HealthBar.update(max_health, health, true)
 	HUDHealthBar.update(max_health, health)

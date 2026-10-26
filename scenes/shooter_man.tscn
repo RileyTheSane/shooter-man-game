@@ -244,6 +244,7 @@ wait_time = 0.2
 one_shot = true
 
 [node name="HealthBar" parent="." unique_id=1878508474 instance=ExtResource("3_0ifkv")]
+z_index = 0
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0

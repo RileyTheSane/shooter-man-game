@@ -60,11 +60,7 @@ func _on_launch_anim_pause_timeout() -> void:
 	
 	if (health < max_health):
 		$SimpleHealthBar.show()
-	
 	damage = 60 # make damage happen
-
-func _on_max_fly_time_timeout() -> void:
-	queue_free()
 
 func update_health(change: float):
 	if (health > 0): # only do the sound effects and stuff if the gloink is still alive (health > 100)
@@ -87,9 +83,14 @@ func update_health(change: float):
 			hide()
 
 func _on_death_sound_effect_finished() -> void:  # on death queue free so that the sound effect still plays
+	$"../..".gloinkKillPoints += 25
 	queue_free()
 
 func _on_start_wait_timeout() -> void:
 	enabled = true
 	$AttackStartDelay.wait_time = randf_range(3, 9)
 	$AttackStartDelay.start()
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free()

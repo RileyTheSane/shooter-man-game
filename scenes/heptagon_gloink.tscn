@@ -122,12 +122,10 @@ one_shot = true
 
 [node name="LaunchAnimPause" type="Timer" parent="." unique_id=1699855956]
 wait_time = 1.5
+one_shot = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1534236499]
 polygon = PackedVector2Array(-11, -4, 0, -11, 10, -4, 11, 4, 5, 11, -6, 11, -11, 3)
-
-[node name="MaxFlyTime" type="Timer" parent="." unique_id=850955476]
-wait_time = 3.0
 
 [node name="SimpleHealthBar" parent="." unique_id=736117579 instance=ExtResource("3_y410e")]
 offset_top = -17.0
@@ -149,6 +147,5 @@ stream = ExtResource("5_7cvgb")
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="AttackStartDelay" to="." method="_on_attack_start_delay_timeout"]
 [connection signal="timeout" from="LaunchAnimPause" to="." method="_on_launch_anim_pause_timeout"]
-[connection signal="timeout" from="MaxFlyTime" to="." method="_on_max_fly_time_timeout"]
 [connection signal="timeout" from="StartWait" to="." method="_on_start_wait_timeout"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

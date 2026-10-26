@@ -125,6 +125,13 @@ Waves;
 	9;
 		Everybody yay
 
+How scoring works:
+	-2 points per second playing            (Time)
+	+Some points per glonk killed           (Gloinks Killed)
+	+4 points per glionk projectile shot       ^^^^^^^
+	-.25 per bullet                         (Bullets Used)
+	-(max_health - health) / max_health * 30 (Damage Taken)
+
 
 Changelog 7/22/2026
 Fixed Hexagons colliding with other gloinks and each other

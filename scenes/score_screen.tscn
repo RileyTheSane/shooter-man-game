@@ -1,0 +1,660 @@
+[gd_scene format=3 uid="uid://53ov52y276i5"]
+
+[ext_resource type="Script" uid="uid://curqqdw5poqd1" path="res://scripts/score_screen.gd" id="1_j7j2c"]
+[ext_resource type="Texture2D" uid="uid://b7ucgvbofyu8y" path="res://assets/ShooterManArt.png" id="1_pdhpn"]
+[ext_resource type="PackedScene" uid="uid://xq5p642cso4o" path="res://scenes/digits.tscn" id="3_1i8on"]
+[ext_resource type="PackedScene" uid="uid://drxwebmc8wfgi" path="res://scenes/retry_button.tscn" id="3_bopw0"]
+[ext_resource type="AudioStream" uid="uid://cosl6h3he4iym" path="res://assets/sfx/ButtonClick.mp3" id="5_1i8on"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aa0vk"]
+atlas = ExtResource("1_pdhpn")
+region = Rect2(988, 45, 267, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5etin"]
+atlas = ExtResource("1_pdhpn")
+region = Rect2(852, 191, 304, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3eipi"]
+atlas = ExtResource("1_pdhpn")
+region = Rect2(946, 330, 115, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6xoo"]
+atlas = ExtResource("1_pdhpn")
+region = Rect2(1012, 416, 256, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qj81n"]
+atlas = ExtResource("1_pdhpn")
+region = Rect2(1261, 55, 155, 51)
+
+[sub_resource type="Animation" id="Animation_o8i8v"]
+resource_name = "Boilerplate"
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GloinksKilled:texture:region")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(988, 2, 266, 40), Rect2(988, 45, 267, 40), Rect2(988, 88, 270, 39)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DamageTaken:texture:region")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(849, 141, 304, 47), Rect2(852, 191, 304, 46), Rect2(945, 240, 305, 49)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Time:texture:region")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(945, 292, 110, 35), Rect2(946, 330, 115, 36), Rect2(1064, 292, 111, 36)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BulletsUsed:texture:region")
+tracks/3/interp = 0
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(1012, 369, 141, 44), Rect2(1012, 416, 141, 44), Rect2(1010, 463, 141, 43)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Total:texture:region")
+tracks/4/interp = 0
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(1258, 2, 156, 50), Rect2(1261, 55, 155, 51), Rect2(1261, 109, 155, 50)]
+}
+
+[sub_resource type="Animation" id="Animation_ddmsq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GloinksKilled:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(988, 45, 267, 40)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DamageTaken:texture:region")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(852, 191, 304, 46)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Time:texture:region")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(946, 330, 115, 36)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BulletsUsed:texture:region")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(1012, 416, 256, 44)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Total:texture:region")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(1261, 55, 155, 51)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cyl0f"]
+_data = {
+&"Boilerplate": SubResource("Animation_o8i8v"),
+&"RESET": SubResource("Animation_ddmsq")
+}
+
+[sub_resource type="Animation" id="Animation_bopw0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GloinksKilled:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Digits:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DamageTaken:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Digits2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Time:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Digits3:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BulletsUsed:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Digits4:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Total:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Digits5:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cyl0f"]
+resource_name = "show"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GloinksKilled:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Digits:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DamageTaken:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Digits2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Time:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Digits3:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BulletsUsed:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Digits4:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Total:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Digits5:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1i8on"]
+resource_name = "show"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GloinksKilled:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Digits:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DamageTaken:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Digits2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Time:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Digits3:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BulletsUsed:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(3, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Digits4:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(3, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Total:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(4, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Digits5:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(4, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/10/type = "method"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("RetryButton")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"show_button"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o8i8v"]
+_data = {
+&"RESET": SubResource("Animation_bopw0"),
+&"hide": SubResource("Animation_cyl0f"),
+&"show": SubResource("Animation_1i8on")
+}
+
+[node name="ScoreScreen" type="CanvasLayer" unique_id=423949678]
+layer = 5
+script = ExtResource("1_j7j2c")
+
+[node name="RetryButton" parent="." unique_id=1111441099 instance=ExtResource("3_bopw0")]
+
+[node name="GloinksKilled" type="TextureRect" parent="." unique_id=1360954379]
+modulate = Color(1, 1, 1, 0)
+offset_left = 223.23499
+offset_top = 135.03
+offset_right = 489.235
+offset_bottom = 175.03
+scale = Vector2(0.865, 0.865)
+pivot_offset = Vector2(139, 22)
+texture = SubResource("AtlasTexture_aa0vk")
+
+[node name="Digits" parent="." unique_id=614833132 instance=ExtResource("3_1i8on")]
+modulate = Color(1, 1, 1, 0)
+offset_left = 495.0
+offset_top = 169.0
+offset_right = 495.0
+offset_bottom = 169.0
+scale = Vector2(0.8, 0.8)
+
+[node name="DamageTaken" type="TextureRect" parent="." unique_id=1874834337]
+modulate = Color(1, 1, 1, 0)
+offset_left = 210.23502
+offset_top = 177.02998
+offset_right = 514.235
+offset_bottom = 224.03
+scale = Vector2(0.72, 0.72)
+pivot_offset = Vector2(155.80112, 25.414368)
+texture = SubResource("AtlasTexture_5etin")
+
+[node name="Digits2" parent="." unique_id=335330789 instance=ExtResource("3_1i8on")]
+modulate = Color(1, 1, 1, 0)
+offset_left = 495.0
+offset_top = 216.0
+offset_right = 495.0
+offset_bottom = 216.0
+scale = Vector2(0.8, 0.8)
+
+[node name="Time" type="TextureRect" parent="." unique_id=2005887400]
+modulate = Color(1, 1, 1, 0)
+offset_left = 374.235
+offset_top = 223.02998
+offset_right = 484.235
+offset_bottom = 263.02997
+scale = Vector2(0.8, 0.8)
+pivot_offset = Vector2(56, 21)
+texture = SubResource("AtlasTexture_3eipi")
+
+[node name="Digits3" parent="." unique_id=1949831608 instance=ExtResource("3_1i8on")]
+modulate = Color(1, 1, 1, 0)
+offset_left = 495.0
+offset_top = 255.0
+offset_right = 495.0
+offset_bottom = 255.0
+scale = Vector2(0.8, 0.8)
+
+[node name="BulletsUsed" type="TextureRect" parent="." unique_id=304334836]
+modulate = Color(1, 1, 1, 0)
+offset_left = 336.235
+offset_top = 260.02997
+offset_right = 592.235
+offset_bottom = 304.02997
+scale = Vector2(0.78, 0.78)
+pivot_offset = Vector2(133, 22)
+texture = SubResource("AtlasTexture_o6xoo")
+stretch_mode = 2
+
+[node name="Digits4" parent="." unique_id=956947001 instance=ExtResource("3_1i8on")]
+modulate = Color(1, 1, 1, 0)
+offset_left = 495.0
+offset_top = 296.0
+offset_right = 495.0
+offset_bottom = 296.0
+scale = Vector2(0.8, 0.8)
+
+[node name="Total" type="TextureRect" parent="." unique_id=581619522]
+modulate = Color(1, 1, 1, 0)
+offset_left = 321.235
+offset_top = 336.03
+offset_right = 477.235
+offset_bottom = 386.03
+texture = SubResource("AtlasTexture_qj81n")
+
+[node name="Digits5" parent="." unique_id=2048051683 instance=ExtResource("3_1i8on")]
+modulate = Color(1, 1, 1, 0)
+offset_left = 505.00003
+offset_top = 387.00003
+offset_right = 505.0
+offset_bottom = 387.0
+scale = Vector2(1.4, 1.4)
+
+[node name="BoilerplatePlayer" type="AnimationPlayer" parent="." unique_id=1871683300]
+libraries/ = SubResource("AnimationLibrary_cyl0f")
+autoplay = &"Boilerplate"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1303446285]
+libraries/ = SubResource("AnimationLibrary_o8i8v")
+
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=585764238]
+stream = ExtResource("5_1i8on")
+
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]

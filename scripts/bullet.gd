@@ -7,6 +7,7 @@ const SPEED = 600.00
 func _ready() -> void:
 	velocity *= SPEED
 	$AudioStreamPlayer.play()
+	$"../..".bulletsUsed += 1
 
 func _physics_process(_delta: float) -> void:
 	if enabled:

@@ -70,6 +70,7 @@ func update_health(change: float):
 			hide()
 
 func _on_death_sound_effect_finished() -> void: # on death queue free so that the sound effect still plays
+	$"../..".gloinkKillPoints += 15
 	queue_free()
 
 func _on_start_wait_timeout() -> void:
