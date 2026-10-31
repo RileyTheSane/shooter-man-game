@@ -31,7 +31,6 @@ func _physics_process(_delta: float) -> void:
 		velocity.y = -600
 		velocity.x = 0
 		move_and_slide()
-	
 
 func _on_attack_start_delay_timeout() -> void:
 	attacking = true
@@ -90,7 +89,6 @@ func _on_start_wait_timeout() -> void:
 	enabled = true
 	$AttackStartDelay.wait_time = randf_range(3, 9)
 	$AttackStartDelay.start()
-
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	queue_free()

@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dw78adrgff55q"]
 
 [ext_resource type="Script" uid="uid://c6lpuh3ti18ki" path="res://scripts/octagon_projectile.gd" id="1_772rn"]
-[ext_resource type="Texture2D" uid="uid://qvjf77den8vj" path="res://assets/ShooterManArt.png" id="2_rqjpy"]
+[ext_resource type="Texture2D" uid="uid://b7ucgvbofyu8y" path="res://assets/ShooterManArt.png" id="2_rqjpy"]
+[ext_resource type="AudioStream" uid="uid://0k44lln5hq4b" path="res://assets/sfx/GloinkDeath.mp3" id="3_rqjpy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rqjpy"]
 atlas = ExtResource("2_rqjpy")
@@ -27,7 +28,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1uo48")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 8.0
 }]
@@ -53,4 +54,10 @@ rect = Rect2(-1, -1, 2, 2)
 
 [node name="Decay" type="Timer" parent="." unique_id=726339582]
 
+[node name="DeathSoundEffect" type="AudioStreamPlayer" parent="." unique_id=992220009]
+stream = ExtResource("3_rqjpy")
+volume_db = -8.0
+pitch_scale = 1.14
+
 [connection signal="timeout" from="Decay" to="." method="_on_decay_timeout"]
+[connection signal="finished" from="DeathSoundEffect" to="." method="_on_death_sound_effect_finished"]

@@ -30,4 +30,11 @@ func update_health(change: float):
 	health += change
 	
 	if health <= 0:
-		queue_free()
+		hide()
+		$DeathSoundEffect.play()
+		set_collision_layer_value(2, false)
+		set_collision_mask_value(2, false)
+
+
+func _on_death_sound_effect_finished() -> void:
+	queue_free()

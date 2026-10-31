@@ -9,10 +9,10 @@ const heptagon = preload("res://scenes/heptagon_gloink.tscn")
 const octagon = preload("res://scenes/octagon_gloink.tscn")
 var new_wave_can_start = false
 var pause_has_happened = false
-var wave_num = 1
+var wave_num = 9
 
 func start():
-	wave1()
+	wave9()
 	%ShooterMan.can_take_damage = false # make him invincible until the wave actually starts
 	$PreventNewWave.start()
 

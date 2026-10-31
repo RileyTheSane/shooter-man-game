@@ -35,7 +35,6 @@
 [ext_resource type="Texture2D" uid="uid://cvn57ueb7mmxs" path="res://assets/BackstoryAnimationFrames/frame0012.png" id="33_gr2hi"]
 [ext_resource type="Texture2D" uid="uid://vydtcqkkcykg" path="res://assets/BackstoryAnimationFrames/frame0013.png" id="34_pdvnu"]
 [ext_resource type="Texture2D" uid="uid://b1fcfo7ka4qug" path="res://assets/BackstoryAnimationFrames/frame0014.png" id="35_aoyvg"]
-[ext_resource type="AudioStream" uid="uid://djsk5aj8k6ru8" path="res://assets/sfx/Groan.mp3" id="36_hp2r6"]
 [ext_resource type="AudioStream" uid="uid://hhuy8cg8oih2" path="res://assets/sfx/Collisions.mp3" id="37_ne0cw"]
 [ext_resource type="AudioStream" uid="uid://blmx0b81ge2dd" path="res://assets/sfx/ItStillHurtsLine.mp3" id="38_tiai6"]
 [ext_resource type="AudioStream" uid="uid://cnq1u4dg7s8pb" path="res://assets/sfx/KeyboardClacking.mp3" id="39_o38iw"]
@@ -473,9 +472,6 @@ color = Color(1, 1, 1, 0)
 [node name="FadeTimer" type="Timer" parent="." unique_id=2024903979]
 wait_time = 1.75
 one_shot = true
-
-[node name="Groan" type="AudioStreamPlayer" parent="." unique_id=1990413386]
-stream = ExtResource("36_hp2r6")
 
 [node name="Collisions" type="AudioStreamPlayer" parent="." unique_id=1583822019]
 stream = ExtResource("37_ne0cw")

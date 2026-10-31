@@ -50,10 +50,8 @@ offset = Vector2(0, -1)
 polygon = PackedVector2Array(-5, -10, 5, -10, 11, -1, 5, 9, -5, 9, -11, 0)
 
 [node name="MaxLifetime" type="Timer" parent="." unique_id=417807135]
-wait_time = 15.0
+wait_time = 10.0
 one_shot = true
-
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1523792055]
 
 [node name="SimpleHealthBar" parent="." unique_id=736117579 instance=ExtResource("3_tv53m")]
 offset_top = -16.0
@@ -71,7 +69,5 @@ stream = ExtResource("4_t0jtx")
 stream = ExtResource("5_ikt48")
 
 [connection signal="timeout" from="MaxLifetime" to="." method="_on_max_lifetime_timeout"]
-[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="timeout" from="StartWait" to="." method="_on_start_wait_timeout"]
 [connection signal="finished" from="DeathSoundEffect" to="." method="_on_death_sound_effect_finished"]

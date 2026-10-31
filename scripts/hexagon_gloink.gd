@@ -6,7 +6,6 @@ var damage = 70
 @export var enabled = false
 @export var shooter_man = null
 var speed = 300.0
-var entered_screen = false
 
 func _ready() -> void:
 	$SimpleHealthBar.hide()
@@ -27,14 +26,6 @@ func _physics_process(_delta: float) -> void:
 func _on_max_lifetime_timeout() -> void:
 	queue_free() # if it has existed for too long, kill it
 
-
-func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
-	entered_screen = true
-
-func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	if entered_screen:
-		queue_free()
-
 func update_health(change: float):
 	if (health > 0): # only do the sound effects and stuff if the gloink is still alive (health > 100)
 		health += change
@@ -46,7 +37,7 @@ func update_health(change: float):
 		
 		if health <= 0:
 			enabled = false
-			set_collision_layer_value(1, false) # make noting able to collide with the hidden gloink
+			set_collision_layer_value(1, false) # make nothing able to collide with the hidden gloink
 			set_collision_mask_value(1, false)
 			$DeathSoundEffect.play()
 			hide()

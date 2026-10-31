@@ -21,7 +21,8 @@ Open up this link or run the exe found in the repository.
 <br />
 Gloinks are here to try and take down Bob once again. Can you defend him from the Gloinks?
 <br />
-Game Includes:
+Game Includes:<br />
+<br />
 * Home Screen
 * Backstory Cutscene
 * 9 waves of Glonks to fight off
@@ -36,7 +37,7 @@ This project was made with the Godot game engine.
 (This can also be found in SoundEffectCredits.txt)<br />
 <br />
 Gun Shot sound - Eaglaxle on Pixabay<br />
-Gloink Death and hit - GFX Sounds on Youtube<br />
+Gloink Death, hit, and scoring screen sound effect - GFX Sounds on Youtube<br />
 Bob death - gprosser on Freesound<br />
 Bob falling - Rowmag on Freesound<br />
 Bob hit - EminYILDIRIM on Freesound<br />

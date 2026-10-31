@@ -6,7 +6,7 @@ func _on_retry_button_pressed() -> void:
 	$RetryButton/AnimationPlayer.play("exit")
 	$AnimationPlayer.play("hide")
 	$Click.play()
-	
+
 func start():
 	$Digits.setValue($"..".gloinkKillPoints)
 	$Digits2.setValue(-$"..".damageTaken)
