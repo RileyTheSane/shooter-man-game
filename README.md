@@ -16,7 +16,9 @@
 
 <!-- ABOUT -->
 ## How To Play
-Open up this link or run the exe found in the repository.
+WASD / Arrow Keys - Movement<br />
+Space / Left Click - Shoot<br />
+Use [this link](https://rileythesane.itch.io/shooter-man-game) to play the game on itch.io.
 <p align="right"></p>
 
 ## About The Project
