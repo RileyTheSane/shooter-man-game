@@ -22,10 +22,10 @@ Open up this link or run the exe found in the repository.
 Gloinks are here to try and take down Bob once again. Can you defend him from the Gloinks?
 <br />
 Game Includes:<br />
-- Home Screen
-- Backstory Cutscene
-- 9 waves of Glonks to fight off
-- A scoring system
+- Home Screen<br />
+- Backstory Cutscene<br />
+- 9 waves of Glonks to fight off<br />
+- A scoring system<br />
 <p align="right"></p>
 
 ## Built Using
