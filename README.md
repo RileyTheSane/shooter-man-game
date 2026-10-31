@@ -36,6 +36,11 @@ Game Includes:<br />
 This project was made with the Godot game engine.
 <p align="right"></p>
 
+## AI User
+I'm learning Godot and during the making of the game I used AI to figure out how to use the godot nodes and help me debug issues. As of now there isn't any AI generated code or images in the game's files.
+<p align="right"></p>
+
+
 ## Sound Effect Credits
 (This can also be found in SoundEffectCredits.txt)<br />
 <br />
