@@ -4,6 +4,7 @@ Bob death - gprosser on Freesound
 Bob falling - Rowmag on Freesound
 Bob hit - EminYILDIRIM on Freesound
 Button Click - malle99 on Freesound
+Monochrome GDShader - miwls on GodotShaders
 
 Backstory Animation:
 Gloink Collision - LemonDemmon on Youtube

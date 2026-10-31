@@ -1,3 +1,5 @@
+<!-- I am aware that this is a shit readme. No I will not be fixing it -->
+
 <a id="readme-top"></a>
 
 <!-- HEADER -->
@@ -41,6 +43,7 @@ Bob death - gprosser on Freesound<br />
 Bob falling - Rowmag on Freesound<br />
 Bob hit - EminYILDIRIM on Freesound<br />
 Button Click - malle99 on Freesound<br />
+Monochrome GDShader - miwls on GodotShaders<br />
 <br />
 Backstory Animation:<br />
 Gloink Collision - LemonDemmon on Youtube<br />

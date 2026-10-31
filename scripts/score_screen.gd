@@ -1,7 +1,6 @@
 extends CanvasLayer
 
 func _on_retry_button_pressed() -> void:
-	print(1)
 	$"..".reset_game()
 	$RetryButton/AnimationPlayer.play("exit")
 	$AnimationPlayer.play("hide")

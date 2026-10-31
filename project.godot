@@ -19,10 +19,11 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=960
 window/size/viewport_height=540
+window/stretch/mode="viewport"
 
 [editor]
 
-movie_writer/movie_file="C:/Users/Charlie Katon/Desktop/Programs/godot/shooter-man-game/output.avi"
+movie_writer/movie_file="C:/Programs/godot/shooter-man-game/output.avi"
 
 [editor_plugins]
 

@@ -4,6 +4,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i04e3"]
 shader = ExtResource("1_5nyua")
+shader_parameter/mono_color = Color(1, 1, 1, 1)
+shader_parameter/contrast = 1.0
 
 [node name="MonochromeFilter" type="CanvasLayer" unique_id=1425572513]
 layer = 5
